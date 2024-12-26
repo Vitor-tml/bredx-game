@@ -11,10 +11,10 @@
 *.so
 *.dylib
 
-# Diretórios de bibliotecas
+# Diretórios de bibliotecas 
 /libs/SFML-2.6.1/
 /libs/box2d
-# Diretório do vscode
+# Diretório do vscode teste
 /.vs-code
 
 # Diretórios de configuração do CMake
