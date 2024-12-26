@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['game_0',['Game',['../classGame.html#ad59df6562a58a614fda24622d3715b65',1,'Game']]],
+  ['gamescene_1',['GameScene',['../classGameScene.html#ac53cc300c8896048c0e21c67e49681b9',1,'GameScene']]],
+  ['getcolisao_2',['getColisao',['../classEntity.html#aee314e5c2443bdfd39aa83a678a73a3c',1,'Entity']]],
+  ['getentitys_3',['getEntitys',['../classTileEngine_1_1TileMap.html#acf7647c8dca6b44d792eb2d813725675',1,'TileEngine::TileMap']]],
+  ['getfont_4',['getFont',['../classGerenciador_1_1ResourceManager.html#a8dc9f22bec89fc4a2b74d5737c42c327',1,'Gerenciador::ResourceManager']]],
+  ['gethitbox_5',['getHitBox',['../classEntity.html#a1655f1a2566c80e98693bfd4e7cfad85',1,'Entity']]],
+  ['getid_6',['getId',['../classEnte.html#a2c77fca793e53898027f7d69bccc372b',1,'Ente']]],
+  ['getimage_7',['getImage',['../classGerenciador_1_1ResourceManager.html#ac74e168551adee0efbea8aa725ac61c6',1,'Gerenciador::ResourceManager']]],
+  ['getinstance_8',['getinstance',['../classGerenciador_1_1Renderer.html#a87ecf77dfe4ee286b209abc0569d8628',1,'Gerenciador::Renderer::getInstance()'],['../classGerenciador_1_1ResourceManager.html#ac195a8557fd6d47ad0973d39979aaa96',1,'Gerenciador::ResourceManager::getInstance()'],['../classSceneManager.html#a51b97c5e92bc7b56492b3e96c0f37146',1,'SceneManager::getInstance()']]],
+  ['getmusic_9',['getMusic',['../classGerenciador_1_1ResourceManager.html#a3847093cf018c1f700dd2fbd60ed5f75',1,'Gerenciador::ResourceManager']]],
+  ['getnochao_10',['getnochao',['../classPhysicsComponent.html#a0b0cbbdbfcd03eda99d02f2039df6dfb',1,'PhysicsComponent::getNoChao()'],['../classEntity.html#a49aa29d01b332e7263d43f794859c083',1,'Entity::getNoChao()']]],
+  ['getorigem_11',['getOrigem',['../classTileEngine_1_1TileMap.html#aaa9afa6bdb6f1fd9002539cab286f981',1,'TileEngine::TileMap']]],
+  ['getorigin_12',['getOrigin',['../classEnte.html#a87af7398c792dc9d8cb455e55b452351',1,'Ente']]],
+  ['getposicao_13',['getPosicao',['../classEntity.html#adbfa1bb3e3d0064088f0b5f3763232cc',1,'Entity']]],
+  ['getsom_14',['getSom',['../classGerenciador_1_1ResourceManager.html#af4b674d5b1a97a3b1aa400bd77fd7329',1,'Gerenciador::ResourceManager']]],
+  ['getsprite_15',['getSprite',['../classEnte.html#a552d6881e5b55126f531f6f1c3798d10',1,'Ente']]],
+  ['gettamanho_16',['getTamanho',['../classGerenciador_1_1Renderer.html#a218dd0956129a0a96c6ea7eb8603f545',1,'Gerenciador::Renderer']]],
+  ['gettexture_17',['getTexture',['../classGerenciador_1_1ResourceManager.html#a681306ca6796fa32c6df652f54eeed61',1,'Gerenciador::ResourceManager']]],
+  ['getview_18',['getView',['../classGerenciador_1_1Renderer.html#a28a8e25741ee70ebbee2c3cf032d0668',1,'Gerenciador::Renderer']]]
+];

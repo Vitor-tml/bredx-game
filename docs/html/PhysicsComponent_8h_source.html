@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Prodislexos Game: Código-Fonte de src/engine/PhysicsComponent/PhysicsComponent.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.jsdelivr.net/gh/jothepro/doxygen-awesome-css@v2.2.0/doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Prodislexos Game
+   </div>
+   <div id="projectbrief">Cyberpunk Game</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="dir_f99b2f371c7f265d072c5f4b120f38c2.html">PhysicsComponent</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">PhysicsComponent.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="PhysicsComponent_8h.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef _FISICA_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define _FISICA_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classPhysicsComponent.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="classPhysicsComponent.html">PhysicsComponent</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">static</span> <span class="keywordtype">float</span> gravidade;   <span class="comment">//&lt; Gravidade aplicada às entidades</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    sf::Vector2f *velocidade; <span class="comment">//&lt; Ponteiro para a velocidade da entidade que agrega o componente</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    sf::Vector2f *posicao;    <span class="comment">//&lt; Ponteiro para a posição da entidade que agrega o componente</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">bool</span> estaNoChao;          <span class="comment">//&lt; Flag que indica se a entidade está colidindo verticalmente com o topo de uma plataforma</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">bool</span> pulando;             <span class="comment">//&lt; Flag que indica se a entidade está pulando (utilizada para pulo duplo)</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">float</span> forcaPulo;          <span class="comment">//&lt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_class" href="classPhysicsComponent.html">PhysicsComponent</a>(sf::Vector2f *position = <span class="keyword">nullptr</span>, sf::Vector2f *speed = <span class="keyword">nullptr</span>, <span class="keywordtype">float</span> fPulo = 300.f);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classPhysicsComponent.html#ac77afe4cc81460ea6027e6c21739a4af">   37</a></span>    <a class="code hl_function" href="classPhysicsComponent.html#ac77afe4cc81460ea6027e6c21739a4af">~PhysicsComponent</a>() {}</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPhysicsComponent.html#a3ff4d9b8aacb4f878ba255ce124bbc38">aplicaFisica</a>(<span class="keywordtype">float</span> deltaTime);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPhysicsComponent.html#ad306c6bbc3e4b9e0b319676596fb5ba5">setNoChao</a>(<span class="keywordtype">bool</span> estado);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classPhysicsComponent.html#a0b0cbbdbfcd03eda99d02f2039df6dfb">getNoChao</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPhysicsComponent.html#aea92a5e07480cd62b88ff0bf52f5bafb">pular</a>(<span class="keywordtype">float</span> forcaPulo = 300.f);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>};</div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#endif </span><span class="comment">// _FISICA_H</span></div>
+<div class="ttc" id="aclassPhysicsComponent_html"><div class="ttname"><a href="classPhysicsComponent.html">PhysicsComponent</a></div><div class="ttdoc">Gerencia a física aplicada a entidades no jogo.</div><div class="ttdef"><b>Definição</b> PhysicsComponent.h:15</div></div>
+<div class="ttc" id="aclassPhysicsComponent_html_a0b0cbbdbfcd03eda99d02f2039df6dfb"><div class="ttname"><a href="classPhysicsComponent.html#a0b0cbbdbfcd03eda99d02f2039df6dfb">PhysicsComponent::getNoChao</a></div><div class="ttdeci">bool getNoChao() const</div><div class="ttdoc">Retorna o estado da entidade em relação ao chão.</div><div class="ttdef"><b>Definição</b> PhysicsComponent.cpp:44</div></div>
+<div class="ttc" id="aclassPhysicsComponent_html_a3ff4d9b8aacb4f878ba255ce124bbc38"><div class="ttname"><a href="classPhysicsComponent.html#a3ff4d9b8aacb4f878ba255ce124bbc38">PhysicsComponent::aplicaFisica</a></div><div class="ttdeci">void aplicaFisica(float deltaTime)</div><div class="ttdoc">Aplica física à entidade.</div><div class="ttdef"><b>Definição</b> PhysicsComponent.cpp:14</div></div>
+<div class="ttc" id="aclassPhysicsComponent_html_ac77afe4cc81460ea6027e6c21739a4af"><div class="ttname"><a href="classPhysicsComponent.html#ac77afe4cc81460ea6027e6c21739a4af">PhysicsComponent::~PhysicsComponent</a></div><div class="ttdeci">~PhysicsComponent()</div><div class="ttdoc">Destrutor da classe PhysicsComponent. O destrutor é vazio, pois a classe não aloca recursos dinamicam...</div><div class="ttdef"><b>Definição</b> PhysicsComponent.h:37</div></div>
+<div class="ttc" id="aclassPhysicsComponent_html_ad306c6bbc3e4b9e0b319676596fb5ba5"><div class="ttname"><a href="classPhysicsComponent.html#ad306c6bbc3e4b9e0b319676596fb5ba5">PhysicsComponent::setNoChao</a></div><div class="ttdeci">void setNoChao(bool estado)</div><div class="ttdoc">Atualiza o estado do componente indicando se a entidade está no chão.</div><div class="ttdef"><b>Definição</b> PhysicsComponent.cpp:39</div></div>
+<div class="ttc" id="aclassPhysicsComponent_html_aea92a5e07480cd62b88ff0bf52f5bafb"><div class="ttname"><a href="classPhysicsComponent.html#aea92a5e07480cd62b88ff0bf52f5bafb">PhysicsComponent::pular</a></div><div class="ttdeci">void pular(float forcaPulo=300.f)</div><div class="ttdoc">Inicia o pulo da entidade. Este método aplica uma força de pulo à entidade, iniciando o movimento de ...</div><div class="ttdef"><b>Definição</b> PhysicsComponent.cpp:49</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Prodislexos Game: Prodislex Game</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.jsdelivr.net/gh/jothepro/doxygen-awesome-css@v2.2.0/doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Prodislexos Game
+   </div>
+   <div id="projectbrief">Cyberpunk Game</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Prodislex <a class="el" href="classGame.html" title="Gerencia o fluxo principal do jogo.">Game</a> </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_README"></a>Este é um projeto de um jogo de plataforma 2D desenvolvido em C++ com foco em criar uma game engine personalizada que suporte mecânicas complexas de jogos de plataforma. Também faz parte do projeto a interação entre o desenvolvedor e os artistas responsáveis pela criação de assets visuais e de som, para garantir que o jogo seja atraente. Código: Vitor-tml Assets: Brenda Alves Música: João Manfron</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Introdução</h1>
+<p>O objetivo deste projeto é criar um jogo de plataforma com elementos clássicos como saltos, coleta de itens, inimigos, e fases desafiadoras. A engine é desenvolvida do zero, focando em modularidade e eficiência.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Compilação</h1>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Pré-Requisitos</h2>
+<ul>
+<li><b>CMAKE</b>: Certifique-se que o CMAKE está instalado. <a href="https://cmake.org/install/">Instalar CMake</a>.</li>
+<li><b>MAKE</b>: Certifique-se que o MAKE está instalar. <a href="https://gnuwin32.sourceforge.net/packages/make.htm">Instalar MAKE</a></li>
+<li><b>SFML</b>: Versão GCC 13.10 MinGW 64bit. <a href="https://www.sfml-dev.org/files/SFML-2.6.1-windows-gcc-13.1.0-mingw-64-bit.zip">Baixar Biblioteca</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Passo-a-passo</h2>
+<ol type="1">
+<li><p class="startli">Clone o repositório. ```bash git clone <a href="https://github.com/Vitor-tml/jogo-de-plataforma-cpp">https://github.com/Vitor-tml/jogo-de-plataforma-cpp</a> cd jogo-de-platforma-cpp </p><div class="fragment"><div class="line">2. Crie os caminhos necessários.</div>
+<div class="line">    </div>
+<div class="line">    Pasta da biblioteca</div>
+</div><!-- fragment --><p> bash mkdir libs </p><div class="fragment"><div class="line">(mover a pasta do SFML para </div>
+</div><!-- fragment --><p> libs```)</p>
+<p class="startli">Pasta para compilação </p><div class="fragment"><div class="line">mkdir build</div>
+</div><!-- fragment --></li>
+<li>Gere os arquivos de compilação na pastal <code>build</code> (necessário a cada novo arquivo do projeto). <div class="fragment"><div class="line">cd build</div>
+<div class="line">cmake ..</div>
+</div><!-- fragment --></li>
+<li><em>Cruze os dedos</em> e compile o projeto. <div class="fragment"><div class="line">make -j16</div>
+</div><!-- fragment --> <div class="fragment"><div class="line">-j16</div>
+</div><!-- fragment --> esse parâmetro define quantas threads serão usadas na compilação.</li>
+<li>Execute o programa.</li>
+</ol>
+<h3><a class="anchor" id="autotoc_md5"></a>
+Caso esteja no windows:</h3>
+<ol type="1">
+<li>Copie as dlls da do caminho <code>.\libs\SFML-2.6.1\bin\</code> para a pasta <code>build</code> ou outro caminho do executável. <br  />
+</li>
+<li>Execute o programa: <code>bash ./game.exe </code> </li>
+</ol>
+<h3><a class="anchor" id="autotoc_md6"></a>
+Caso esteja no linux:</h3>
+<ol type="1">
+<li>Seja feliz.</li>
+<li>Execute o programa: <code>bash ./game </code> </li>
+</ol>
+<h1><a class="anchor" id="autotoc_md7"></a>
+Estrutura do Projeto</h1>
+<div class="fragment"><div class="line">JogoPlataforma/</div>
+<div class="line">├── docs</div>
+<div class="line">│   ├── html               # Documentação em HTML</div>
+<div class="line">│   └── uml                # Diagramas UML</div>
+<div class="line">├── include                 # Headers Externos</div>
+<div class="line">├── libs                    # Bibliotecas Externas</div>
+<div class="line">├── src                     # Código Fonte</div>
+<div class="line">│   ├── engine</div>
+<div class="line">│   │   ├── Animation       # Sistema de Animação</div>
+<div class="line">│   │   ├── CollisionManager # Gerenciamento de Colisões</div>
+<div class="line">│   │   ├── Ente            # Implementação de Entidades</div>
+<div class="line">│   │   ├── Paralaxe        # Implementação de Paralaxe</div>
+<div class="line">│   │   ├── PhysicsComponent # Componentes de Física</div>
+<div class="line">│   │   ├── Renderer        # Sistema de Renderização</div>
+<div class="line">│   │   ├── ResourceManager  # Gerenciamento de Recursos</div>
+<div class="line">│   │   ├── SceneManager    # Gerenciamento de Cenas</div>
+<div class="line">│   │   └── TileMap         # Gerenciamento de Mapas de Tiles</div>
+<div class="line">│   └── game</div>
+<div class="line">│       ├── Entity          # Implementação de Entidades</div>
+<div class="line">│       │   └── Character    # Classe Base para Personagens</div>
+<div class="line">│       │       └── Player    # Implementação do Jogador</div>
+<div class="line">│       └── Scenes          # Implementação das Cenas</div>
+<div class="line">│           ├── CreditsScene # Cena de Créditos</div>
+<div class="line">│           ├── GameScene    # Cena do Jogo</div>
+<div class="line">│           └── MenuScene     # Cena do Menu</div>
+<div class="line">└── CMakeLists.txt          # Configuração do CMake</div>
+</div><!-- fragment --> <h1><a class="anchor" id="autotoc_md8"></a>
+Gerenciamento do Projeto</h1>
+<p><a href="https://buttered-hardhat-d97.notion.site/Prodisgame-9a12f75679a847f8b654f903ab56e048?pvs=4">Notion</a></p>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Estado do Jogo</h1>
+<p>Clique na imagem para abrir o vídeo. <a href="https://youtu.be/8EU4itDEwD0"><img src="https://i.pinimg.com/736x/f1/22/3e/f1223e6ca40966eaeee9ece466791c1c.jpg" alt="Estado do Jogo" class="inline"/></a> </p>
+</div></div><!-- PageDoc -->
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

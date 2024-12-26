@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Prodislexos Game: Código-Fonte de src/game/Entity/Entity.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.jsdelivr.net/gh/jothepro/doxygen-awesome-css@v2.2.0/doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Prodislexos Game
+   </div>
+   <div id="projectbrief">Cyberpunk Game</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1699be727a800b1d059c6f7f2b91d2ee.html">game</a></li><li class="navelem"><a class="el" href="dir_2afc49de1dd909a15bcd07e3bc6bf46b.html">Entity</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Entity.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Entity_8h.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef _ENTITY_H_</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define _ENTITY_H_</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;../../engine/Ente/Ente.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../../engine/PhysicsComponent/PhysicsComponent.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classEntity.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="classEntity.html">Entity</a> : <span class="keyword">public</span> <a class="code hl_class" href="classEnte.html">Ente</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classEntity.html#a00eb6f8e2a7e4f23958c0aa4dcc97e79">   18</a></span>    sf::Vector2f <a class="code hl_variable" href="classEntity.html#a00eb6f8e2a7e4f23958c0aa4dcc97e79">posicao</a>;      <span class="comment">//&lt; Coordenada x e y do entidade na tela</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classEntity.html#acc024f97b7a03ae7299a8a76f5ca35e7">   19</a></span>    sf::Vector2f <a class="code hl_variable" href="classEntity.html#acc024f97b7a03ae7299a8a76f5ca35e7">velocidade</a>;   <span class="comment">//&lt; Velocidade vetorial  do entidade</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classEntity.html#aa17451011960761b9d4d40b52e7bd7dc">   20</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classEntity.html#aa17451011960761b9d4d40b52e7bd7dc">colisao</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classEntity.html#a9e65b0ce63e51020e164fe049d6ceaae">   21</a></span>    sf::RectangleShape <a class="code hl_variable" href="classEntity.html#a9e65b0ce63e51020e164fe049d6ceaae">hitBox</a>; <span class="comment">//&lt; Hitbox da entidade</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classEntity.html#ac7174dc4f31350ce802cbd6c64ae6187">   22</a></span>    <a class="code hl_class" href="classPhysicsComponent.html">PhysicsComponent</a> <a class="code hl_variable" href="classEntity.html#ac7174dc4f31350ce802cbd6c64ae6187">fisica</a>;   <span class="comment">//&lt; Componente responsável pela gravidade, aceleração, movimento, etc.</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classEntity.html#a317f57f6c662232660c3836334b67404">   23</a></span>    sf::Vector2f <a class="code hl_variable" href="classEntity.html#a317f57f6c662232660c3836334b67404">hitBoxSize</a>;   <span class="comment">//&lt; Tamanho da hitbox do entidade para hitbox configurada manualmente</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classEntity.html#a586b3e76732c81a67d14e13dc8bb431c">   24</a></span>    sf::Vector2f <a class="code hl_variable" href="classEntity.html#a586b3e76732c81a67d14e13dc8bb431c">hitBoxOffset</a>; <span class="comment">//&lt; Diferença entre o tamanho da sprite da entidade e sua hitBox</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_class" href="classEntity.html">Entity</a>(<span class="keywordtype">int</span> x = 0, <span class="keywordtype">int</span> y = 0);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_class" href="classEntity.html">Entity</a>(sf::Texture &amp;textura,  <span class="keywordtype">int</span> x = 0, <span class="keywordtype">int</span> y = 0, <span class="keywordtype">bool</span> colide = 1);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classEntity.html#a588098978eea6a3486b7361605ff3f0f">   46</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classEntity.html#a588098978eea6a3486b7361605ff3f0f">~Entity</a>() {}</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classEntity.html#a13992bec0befd2dbdb9e843a6b8de4b5">executar</a>(<span class="keywordtype">float</span> deltaTime);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    sf::RectangleShape&amp; <a class="code hl_function" href="classEntity.html#a1655f1a2566c80e98693bfd4e7cfad85">getHitBox</a>();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEntity.html#a484908a0c41b9d981e40a24e236895d5">setPosicao</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEntity.html#a484908a0c41b9d981e40a24e236895d5">setPosicao</a>(sf::Vector2f novaPosicao);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    sf::Vector2f <a class="code hl_function" href="classEntity.html#adbfa1bb3e3d0064088f0b5f3763232cc">getPosicao</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEntity.html#a6983d7a4a2014a8c7416b23be3bda557">setOrigin</a>();</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEntity.html#ab52a35ea2828837f82317c6c9ad2348b">criarHitBox</a>();</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEntity.html#a8bf5b283a903fec72556ae66ccc23b00">setHitBoxSize</a>(sf::Vector2f size);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEntity.html#aa533218f12b9f0c9a38df0368a4e438b">setHitBoxOffset</a>(sf::Vector2f offset);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEntity.html#afbbbd2fa68c105bdc50ebb3e5d1ee5b1">atualizaHitBox</a>();</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEntity.html#af0d61bc952c171eeb521f7cf9f79dc4e">setNoChao</a>(<span class="keywordtype">bool</span> noChao);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classEntity.html#a49aa29d01b332e7263d43f794859c083">getNoChao</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="classEntity.html#a920cf98f5f859a5c8198102698945e77">  124</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classEntity.html#a920cf98f5f859a5c8198102698945e77">colidiu</a>(<a class="code hl_class" href="classEntity.html">Entity</a>* other) = 0;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classEntity.html#aa599b427755eee45e789ee30b1e2ed21">colidiuComTile</a>(<a class="code hl_class" href="classEntity.html">Entity</a>* e);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="classEntity.html#aee314e5c2443bdfd39aa83a678a73a3c">  134</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classEntity.html#aee314e5c2443bdfd39aa83a678a73a3c">getColisao</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classEntity.html#aa17451011960761b9d4d40b52e7bd7dc">colisao</a>;}</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>};</div>
+</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="preprocessor">#endif </span><span class="comment">// _ENTITY_H_</span></div>
+<div class="ttc" id="aclassEnte_html"><div class="ttname"><a href="classEnte.html">Ente</a></div><div class="ttdoc">Classe base para todos os elementos visuais do jogo.</div><div class="ttdef"><b>Definição</b> Ente.h:15</div></div>
+<div class="ttc" id="aclassEntity_html"><div class="ttname"><a href="classEntity.html">Entity</a></div><div class="ttdoc">Classe base para entidades no jogo.</div><div class="ttdef"><b>Definição</b> Entity.h:16</div></div>
+<div class="ttc" id="aclassEntity_html_a00eb6f8e2a7e4f23958c0aa4dcc97e79"><div class="ttname"><a href="classEntity.html#a00eb6f8e2a7e4f23958c0aa4dcc97e79">Entity::posicao</a></div><div class="ttdeci">sf::Vector2f posicao</div><div class="ttdef"><b>Definição</b> Entity.h:18</div></div>
+<div class="ttc" id="aclassEntity_html_a13992bec0befd2dbdb9e843a6b8de4b5"><div class="ttname"><a href="classEntity.html#a13992bec0befd2dbdb9e843a6b8de4b5">Entity::executar</a></div><div class="ttdeci">virtual void executar(float deltaTime)</div><div class="ttdoc">Método para executar a lógica da entidade.</div><div class="ttdef"><b>Definição</b> Entity.cpp:56</div></div>
+<div class="ttc" id="aclassEntity_html_a1655f1a2566c80e98693bfd4e7cfad85"><div class="ttname"><a href="classEntity.html#a1655f1a2566c80e98693bfd4e7cfad85">Entity::getHitBox</a></div><div class="ttdeci">sf::RectangleShape &amp; getHitBox()</div><div class="ttdoc">Retorna a hitbox da entidade.</div><div class="ttdef"><b>Definição</b> Entity.cpp:51</div></div>
+<div class="ttc" id="aclassEntity_html_a317f57f6c662232660c3836334b67404"><div class="ttname"><a href="classEntity.html#a317f57f6c662232660c3836334b67404">Entity::hitBoxSize</a></div><div class="ttdeci">sf::Vector2f hitBoxSize</div><div class="ttdef"><b>Definição</b> Entity.h:23</div></div>
+<div class="ttc" id="aclassEntity_html_a484908a0c41b9d981e40a24e236895d5"><div class="ttname"><a href="classEntity.html#a484908a0c41b9d981e40a24e236895d5">Entity::setPosicao</a></div><div class="ttdeci">void setPosicao(int x, int y)</div><div class="ttdoc">Move o entidade até uma coordenada (x, y)</div><div class="ttdef"><b>Definição</b> Entity.cpp:34</div></div>
+<div class="ttc" id="aclassEntity_html_a49aa29d01b332e7263d43f794859c083"><div class="ttname"><a href="classEntity.html#a49aa29d01b332e7263d43f794859c083">Entity::getNoChao</a></div><div class="ttdeci">bool getNoChao() const</div><div class="ttdoc">Retorna o estado da entidade no componente de física.</div><div class="ttdef"><b>Definição</b> Entity.cpp:148</div></div>
+<div class="ttc" id="aclassEntity_html_a586b3e76732c81a67d14e13dc8bb431c"><div class="ttname"><a href="classEntity.html#a586b3e76732c81a67d14e13dc8bb431c">Entity::hitBoxOffset</a></div><div class="ttdeci">sf::Vector2f hitBoxOffset</div><div class="ttdef"><b>Definição</b> Entity.h:24</div></div>
+<div class="ttc" id="aclassEntity_html_a588098978eea6a3486b7361605ff3f0f"><div class="ttname"><a href="classEntity.html#a588098978eea6a3486b7361605ff3f0f">Entity::~Entity</a></div><div class="ttdeci">virtual ~Entity()</div><div class="ttdoc">Destruidor da classe Entity.</div><div class="ttdef"><b>Definição</b> Entity.h:46</div></div>
+<div class="ttc" id="aclassEntity_html_a6983d7a4a2014a8c7416b23be3bda557"><div class="ttname"><a href="classEntity.html#a6983d7a4a2014a8c7416b23be3bda557">Entity::setOrigin</a></div><div class="ttdeci">void setOrigin()</div><div class="ttdoc">Configura a origem da sprite da entidade no meio da base da sprite.</div><div class="ttdef"><b>Definição</b> Entity.cpp:28</div></div>
+<div class="ttc" id="aclassEntity_html_a8bf5b283a903fec72556ae66ccc23b00"><div class="ttname"><a href="classEntity.html#a8bf5b283a903fec72556ae66ccc23b00">Entity::setHitBoxSize</a></div><div class="ttdeci">void setHitBoxSize(sf::Vector2f size)</div><div class="ttdoc">Define o tamanho personalizado da hitBox.</div><div class="ttdef"><b>Definição</b> Entity.cpp:76</div></div>
+<div class="ttc" id="aclassEntity_html_a920cf98f5f859a5c8198102698945e77"><div class="ttname"><a href="classEntity.html#a920cf98f5f859a5c8198102698945e77">Entity::colidiu</a></div><div class="ttdeci">virtual void colidiu(Entity *other)=0</div><div class="ttdoc">Método virtual para lidar com colisões com outras entidades.</div></div>
+<div class="ttc" id="aclassEntity_html_a9e65b0ce63e51020e164fe049d6ceaae"><div class="ttname"><a href="classEntity.html#a9e65b0ce63e51020e164fe049d6ceaae">Entity::hitBox</a></div><div class="ttdeci">sf::RectangleShape hitBox</div><div class="ttdef"><b>Definição</b> Entity.h:21</div></div>
+<div class="ttc" id="aclassEntity_html_aa17451011960761b9d4d40b52e7bd7dc"><div class="ttname"><a href="classEntity.html#aa17451011960761b9d4d40b52e7bd7dc">Entity::colisao</a></div><div class="ttdeci">bool colisao</div><div class="ttdef"><b>Definição</b> Entity.h:20</div></div>
+<div class="ttc" id="aclassEntity_html_aa533218f12b9f0c9a38df0368a4e438b"><div class="ttname"><a href="classEntity.html#aa533218f12b9f0c9a38df0368a4e438b">Entity::setHitBoxOffset</a></div><div class="ttdeci">void setHitBoxOffset(sf::Vector2f offset)</div><div class="ttdoc">Define o offset(diferença) entre a sprite e a hitbox da entidade.</div><div class="ttdef"><b>Definição</b> Entity.cpp:82</div></div>
+<div class="ttc" id="aclassEntity_html_aa599b427755eee45e789ee30b1e2ed21"><div class="ttname"><a href="classEntity.html#aa599b427755eee45e789ee30b1e2ed21">Entity::colidiuComTile</a></div><div class="ttdeci">virtual void colidiuComTile(Entity *e)</div><div class="ttdoc">Método virtual para lidar com colisões com tiles.</div><div class="ttdef"><b>Definição</b> Entity.cpp:94</div></div>
+<div class="ttc" id="aclassEntity_html_ab52a35ea2828837f82317c6c9ad2348b"><div class="ttname"><a href="classEntity.html#ab52a35ea2828837f82317c6c9ad2348b">Entity::criarHitBox</a></div><div class="ttdeci">void criarHitBox()</div><div class="ttdoc">Cria e atualiza a hitbox da entidade com base na sprite ou hitbox personalizada e posição da entidade...</div><div class="ttdef"><b>Definição</b> Entity.cpp:62</div></div>
+<div class="ttc" id="aclassEntity_html_ac7174dc4f31350ce802cbd6c64ae6187"><div class="ttname"><a href="classEntity.html#ac7174dc4f31350ce802cbd6c64ae6187">Entity::fisica</a></div><div class="ttdeci">PhysicsComponent fisica</div><div class="ttdef"><b>Definição</b> Entity.h:22</div></div>
+<div class="ttc" id="aclassEntity_html_acc024f97b7a03ae7299a8a76f5ca35e7"><div class="ttname"><a href="classEntity.html#acc024f97b7a03ae7299a8a76f5ca35e7">Entity::velocidade</a></div><div class="ttdeci">sf::Vector2f velocidade</div><div class="ttdef"><b>Definição</b> Entity.h:19</div></div>
+<div class="ttc" id="aclassEntity_html_adbfa1bb3e3d0064088f0b5f3763232cc"><div class="ttname"><a href="classEntity.html#adbfa1bb3e3d0064088f0b5f3763232cc">Entity::getPosicao</a></div><div class="ttdeci">sf::Vector2f getPosicao() const</div><div class="ttdoc">Retorna a coordenada da entidade em um vetor (x, y)</div><div class="ttdef"><b>Definição</b> Entity.cpp:46</div></div>
+<div class="ttc" id="aclassEntity_html_aee314e5c2443bdfd39aa83a678a73a3c"><div class="ttname"><a href="classEntity.html#aee314e5c2443bdfd39aa83a678a73a3c">Entity::getColisao</a></div><div class="ttdeci">bool getColisao() const</div><div class="ttdef"><b>Definição</b> Entity.h:134</div></div>
+<div class="ttc" id="aclassEntity_html_af0d61bc952c171eeb521f7cf9f79dc4e"><div class="ttname"><a href="classEntity.html#af0d61bc952c171eeb521f7cf9f79dc4e">Entity::setNoChao</a></div><div class="ttdeci">void setNoChao(bool noChao)</div><div class="ttdoc">Atualiza estado a da entidade para no componete de física.</div><div class="ttdef"><b>Definição</b> Entity.cpp:143</div></div>
+<div class="ttc" id="aclassEntity_html_afbbbd2fa68c105bdc50ebb3e5d1ee5b1"><div class="ttname"><a href="classEntity.html#afbbbd2fa68c105bdc50ebb3e5d1ee5b1">Entity::atualizaHitBox</a></div><div class="ttdeci">void atualizaHitBox()</div><div class="ttdoc">Atualiza a posição da hitBox de acordo com a posição da entidade.</div><div class="ttdef"><b>Definição</b> Entity.cpp:88</div></div>
+<div class="ttc" id="aclassPhysicsComponent_html"><div class="ttname"><a href="classPhysicsComponent.html">PhysicsComponent</a></div><div class="ttdoc">Gerencia a física aplicada a entidades no jogo.</div><div class="ttdef"><b>Definição</b> PhysicsComponent.h:15</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

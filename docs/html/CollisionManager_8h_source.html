@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Prodislexos Game: Código-Fonte de src/engine/CollisionManager/CollisionManager.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.jsdelivr.net/gh/jothepro/doxygen-awesome-css@v2.2.0/doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Prodislexos Game
+   </div>
+   <div id="projectbrief">Cyberpunk Game</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="dir_6d08084f61c9bbf47a6b883d88407af2.html">CollisionManager</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">CollisionManager.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="CollisionManager_8h.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef _COLLISIONMANAGER_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define _COLLISIONMANAGER_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;../../game/Entity/Entity.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../../game/Entity/Character/Player/Player.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;unordered_set&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceGerenciador.html">Gerenciador</a> {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classGerenciador_1_1CollisionManager.html">   19</a></span><span class="keyword">class </span><a class="code hl_class" href="classGerenciador_1_1CollisionManager.html">CollisionManager</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    std::unordered_set&lt;Entity*&gt; entidades; </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_function" href="classGerenciador_1_1CollisionManager.html#aa41f740b1d7e007950292dd1b6903d6d">CollisionManager</a>();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_function" href="classGerenciador_1_1CollisionManager.html#a76b5ccee9c80fa05ef2b4478741ca756">~CollisionManager</a>();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classGerenciador_1_1CollisionManager.html#ae8c90fed21723264834ddd46b1db985f">addEntity</a>(<a class="code hl_class" href="classEntity.html">Entity</a>* entity);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classGerenciador_1_1CollisionManager.html#ad6423915de91fe207b9d5b16f1b711ea">removeEntity</a>(<a class="code hl_class" href="classEntity.html">Entity</a>* entity);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classGerenciador_1_1CollisionManager.html#af6b254a300f5989ca0b3af83aebc2aa3">tratarColisoes</a>();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classGerenciador_1_1CollisionManager.html#aeaf8d8fe14d2287cb025ac750d511c45">verificaColisao</a>(<a class="code hl_class" href="classEntity.html">Entity</a>* a, <a class="code hl_class" href="classEntity.html">Entity</a>* b);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>};</div>
+</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>} <span class="comment">// namespace Gerenciador</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#endif </span><span class="comment">// _COLLISIONMANAGER_H</span></div>
+<div class="ttc" id="aclassEntity_html"><div class="ttname"><a href="classEntity.html">Entity</a></div><div class="ttdoc">Classe base para entidades no jogo.</div><div class="ttdef"><b>Definição</b> Entity.h:16</div></div>
+<div class="ttc" id="aclassGerenciador_1_1CollisionManager_html"><div class="ttname"><a href="classGerenciador_1_1CollisionManager.html">Gerenciador::CollisionManager</a></div><div class="ttdoc">Gerencia as colisões das entidades.</div><div class="ttdef"><b>Definição</b> CollisionManager.h:19</div></div>
+<div class="ttc" id="aclassGerenciador_1_1CollisionManager_html_a76b5ccee9c80fa05ef2b4478741ca756"><div class="ttname"><a href="classGerenciador_1_1CollisionManager.html#a76b5ccee9c80fa05ef2b4478741ca756">Gerenciador::CollisionManager::~CollisionManager</a></div><div class="ttdeci">~CollisionManager()</div><div class="ttdoc">Destruidor da classe CollisionManager.</div><div class="ttdef"><b>Definição</b> CollisionManager.cpp:9</div></div>
+<div class="ttc" id="aclassGerenciador_1_1CollisionManager_html_aa41f740b1d7e007950292dd1b6903d6d"><div class="ttname"><a href="classGerenciador_1_1CollisionManager.html#aa41f740b1d7e007950292dd1b6903d6d">Gerenciador::CollisionManager::CollisionManager</a></div><div class="ttdeci">CollisionManager()</div><div class="ttdoc">Construtor da classe CollisionManager.</div><div class="ttdef"><b>Definição</b> CollisionManager.cpp:5</div></div>
+<div class="ttc" id="aclassGerenciador_1_1CollisionManager_html_ad6423915de91fe207b9d5b16f1b711ea"><div class="ttname"><a href="classGerenciador_1_1CollisionManager.html#ad6423915de91fe207b9d5b16f1b711ea">Gerenciador::CollisionManager::removeEntity</a></div><div class="ttdeci">void removeEntity(Entity *entity)</div><div class="ttdoc">Remove uma entidade do gerenciador de colisões.</div><div class="ttdef"><b>Definição</b> CollisionManager.cpp:23</div></div>
+<div class="ttc" id="aclassGerenciador_1_1CollisionManager_html_ae8c90fed21723264834ddd46b1db985f"><div class="ttname"><a href="classGerenciador_1_1CollisionManager.html#ae8c90fed21723264834ddd46b1db985f">Gerenciador::CollisionManager::addEntity</a></div><div class="ttdeci">void addEntity(Entity *entity)</div><div class="ttdoc">Adiciona uma entidade ao gerenciador de colisões.</div><div class="ttdef"><b>Definição</b> CollisionManager.cpp:14</div></div>
+<div class="ttc" id="aclassGerenciador_1_1CollisionManager_html_aeaf8d8fe14d2287cb025ac750d511c45"><div class="ttname"><a href="classGerenciador_1_1CollisionManager.html#aeaf8d8fe14d2287cb025ac750d511c45">Gerenciador::CollisionManager::verificaColisao</a></div><div class="ttdeci">bool verificaColisao(Entity *a, Entity *b)</div><div class="ttdoc">Verifica se duas entidades estão colidindo.</div><div class="ttdef"><b>Definição</b> CollisionManager.cpp:48</div></div>
+<div class="ttc" id="aclassGerenciador_1_1CollisionManager_html_af6b254a300f5989ca0b3af83aebc2aa3"><div class="ttname"><a href="classGerenciador_1_1CollisionManager.html#af6b254a300f5989ca0b3af83aebc2aa3">Gerenciador::CollisionManager::tratarColisoes</a></div><div class="ttdeci">void tratarColisoes()</div><div class="ttdoc">Trata as colisões entre entidades.</div><div class="ttdef"><b>Definição</b> CollisionManager.cpp:33</div></div>
+<div class="ttc" id="anamespaceGerenciador_html"><div class="ttname"><a href="namespaceGerenciador.html">Gerenciador</a></div><div class="ttdoc">Componentes de funções básicas do jogo como renderização, carregamento de recursos,...</div><div class="ttdef"><b>Definição</b> CollisionManager.cpp:4</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Prodislexos Game: Código-Fonte de src/engine/Ente/Ente.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.jsdelivr.net/gh/jothepro/doxygen-awesome-css@v2.2.0/doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Prodislexos Game
+   </div>
+   <div id="projectbrief">Cyberpunk Game</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="dir_661473ba7017c68c95f7b04aac058140.html">Ente</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Ente.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Ente_8h.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef _ENTE_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define _ENTE_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../Renderer/Renderer.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;../ResourceManager/ResourceManager.h&quot;</span></div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classEnte.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="classEnte.html">Ente</a>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classEnte.html#a33cd957de9be26ff0fe79c033991276b">   17</a></span>    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classEnte.html#a33cd957de9be26ff0fe79c033991276b">id</a>;                                   <span class="comment">//&lt; Indentificador para permanência de objeto</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classEnte.html#a652b2eb31b92ac23c9d7685c63ec6d3e">   18</a></span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classEnte.html#a652b2eb31b92ac23c9d7685c63ec6d3e">cont</a>;                                <span class="comment">//&lt; Contador de ID</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classEnte.html#aeb83b845962260a0b3ed71785d700604">   19</a></span>    <span class="keyword">static</span> <a class="code hl_class" href="classGerenciador_1_1Renderer.html">Gerenciador::Renderer</a>*        <a class="code hl_variable" href="classEnte.html#aeb83b845962260a0b3ed71785d700604">gGrafico</a>;  <span class="comment">//&lt; Instância única do renderer</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classEnte.html#a1edcc59eb8ded7d4e49a4c7a478100e9">   20</a></span>    <span class="keyword">static</span> <a class="code hl_class" href="classGerenciador_1_1ResourceManager.html">Gerenciador::ResourceManager</a>* <a class="code hl_variable" href="classEnte.html#a1edcc59eb8ded7d4e49a4c7a478100e9">gRecursos</a>; <span class="comment">//&lt; Instancia única do gerenciador de recursos</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classEnte.html#a3fba10e5a0a4557b620d0da4aadbc0fe">   21</a></span>    sf::Sprite <a class="code hl_variable" href="classEnte.html#a3fba10e5a0a4557b620d0da4aadbc0fe">sprite</a>;                              <span class="comment">//&lt; Shape a ser desenhado do elemento.</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_function" href="classEnte.html#a0f2adae3258ab0e410c8b57bc7b6f501">Ente</a>();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_function" href="classEnte.html#a0f2adae3258ab0e410c8b57bc7b6f501">Ente</a>(sf::Texture&amp; figura);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classEnte.html#add2c1a12430474220d414f45d9ec24d8">~Ente</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEnte.html#ad359aad2600cc3071a449af63b97239d">renderizar</a>(<span class="keywordtype">int</span> camada = 0);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    sf::Sprite <a class="code hl_function" href="classEnte.html#a552d6881e5b55126f531f6f1c3798d10">getSprite</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEnte.html#ab55ce7b8846a3e26dec4e06a6f25db50">setTexture</a>(sf::Texture&amp; textura);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEnte.html#a1bab90a2be3446c023675958f7430dea">setSize</a>(<span class="keyword">const</span> sf::Vector2f&amp; size);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    sf::Vector2f <a class="code hl_function" href="classEnte.html#a87af7398c792dc9d8cb455e55b452351">getOrigin</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classEnte.html#a2c77fca793e53898027f7d69bccc372b">   76</a></span>    <span class="keywordtype">int</span>  <a class="code hl_function" href="classEnte.html#a2c77fca793e53898027f7d69bccc372b">getId</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> <a class="code hl_variable" href="classEnte.html#a33cd957de9be26ff0fe79c033991276b">id</a>;};</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>};</div>
+</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassEnte_html"><div class="ttname"><a href="classEnte.html">Ente</a></div><div class="ttdoc">Classe base para todos os elementos visuais do jogo.</div><div class="ttdef"><b>Definição</b> Ente.h:15</div></div>
+<div class="ttc" id="aclassEnte_html_a0f2adae3258ab0e410c8b57bc7b6f501"><div class="ttname"><a href="classEnte.html#a0f2adae3258ab0e410c8b57bc7b6f501">Ente::Ente</a></div><div class="ttdeci">Ente()</div><div class="ttdoc">Construtora da classe-base Ente.</div><div class="ttdef"><b>Definição</b> Ente.cpp:9</div></div>
+<div class="ttc" id="aclassEnte_html_a1bab90a2be3446c023675958f7430dea"><div class="ttname"><a href="classEnte.html#a1bab90a2be3446c023675958f7430dea">Ente::setSize</a></div><div class="ttdeci">void setSize(const sf::Vector2f &amp;size)</div><div class="ttdoc">Muda o tamanho da sprite do ente baseado na escala.</div><div class="ttdef"><b>Definição</b> Ente.cpp:45</div></div>
+<div class="ttc" id="aclassEnte_html_a1edcc59eb8ded7d4e49a4c7a478100e9"><div class="ttname"><a href="classEnte.html#a1edcc59eb8ded7d4e49a4c7a478100e9">Ente::gRecursos</a></div><div class="ttdeci">static Gerenciador::ResourceManager * gRecursos</div><div class="ttdef"><b>Definição</b> Ente.h:20</div></div>
+<div class="ttc" id="aclassEnte_html_a2c77fca793e53898027f7d69bccc372b"><div class="ttname"><a href="classEnte.html#a2c77fca793e53898027f7d69bccc372b">Ente::getId</a></div><div class="ttdeci">int getId() const</div><div class="ttdef"><b>Definição</b> Ente.h:76</div></div>
+<div class="ttc" id="aclassEnte_html_a33cd957de9be26ff0fe79c033991276b"><div class="ttname"><a href="classEnte.html#a33cd957de9be26ff0fe79c033991276b">Ente::id</a></div><div class="ttdeci">const int id</div><div class="ttdef"><b>Definição</b> Ente.h:17</div></div>
+<div class="ttc" id="aclassEnte_html_a3fba10e5a0a4557b620d0da4aadbc0fe"><div class="ttname"><a href="classEnte.html#a3fba10e5a0a4557b620d0da4aadbc0fe">Ente::sprite</a></div><div class="ttdeci">sf::Sprite sprite</div><div class="ttdef"><b>Definição</b> Ente.h:21</div></div>
+<div class="ttc" id="aclassEnte_html_a552d6881e5b55126f531f6f1c3798d10"><div class="ttname"><a href="classEnte.html#a552d6881e5b55126f531f6f1c3798d10">Ente::getSprite</a></div><div class="ttdeci">sf::Sprite getSprite() const</div><div class="ttdoc">Retorna o sprite do Ente.</div><div class="ttdef"><b>Definição</b> Ente.cpp:35</div></div>
+<div class="ttc" id="aclassEnte_html_a652b2eb31b92ac23c9d7685c63ec6d3e"><div class="ttname"><a href="classEnte.html#a652b2eb31b92ac23c9d7685c63ec6d3e">Ente::cont</a></div><div class="ttdeci">static int cont</div><div class="ttdef"><b>Definição</b> Ente.h:18</div></div>
+<div class="ttc" id="aclassEnte_html_a87af7398c792dc9d8cb455e55b452351"><div class="ttname"><a href="classEnte.html#a87af7398c792dc9d8cb455e55b452351">Ente::getOrigin</a></div><div class="ttdeci">sf::Vector2f getOrigin() const</div><div class="ttdoc">Retorna a origem da sprite, o ponto por onde coordenada é orientada.</div><div class="ttdef"><b>Definição</b> Ente.cpp:51</div></div>
+<div class="ttc" id="aclassEnte_html_ab55ce7b8846a3e26dec4e06a6f25db50"><div class="ttname"><a href="classEnte.html#ab55ce7b8846a3e26dec4e06a6f25db50">Ente::setTexture</a></div><div class="ttdeci">void setTexture(sf::Texture &amp;textura)</div><div class="ttdoc">Nova textura do Ente.</div><div class="ttdef"><b>Definição</b> Ente.cpp:40</div></div>
+<div class="ttc" id="aclassEnte_html_ad359aad2600cc3071a449af63b97239d"><div class="ttname"><a href="classEnte.html#ad359aad2600cc3071a449af63b97239d">Ente::renderizar</a></div><div class="ttdeci">void renderizar(int camada=0)</div><div class="ttdoc">Método que renderiza o objeto na tela.</div><div class="ttdef"><b>Definição</b> Ente.cpp:29</div></div>
+<div class="ttc" id="aclassEnte_html_add2c1a12430474220d414f45d9ec24d8"><div class="ttname"><a href="classEnte.html#add2c1a12430474220d414f45d9ec24d8">Ente::~Ente</a></div><div class="ttdeci">virtual ~Ente()</div><div class="ttdoc">Destrutora da classe-base Ente.</div><div class="ttdef"><b>Definição</b> Ente.cpp:24</div></div>
+<div class="ttc" id="aclassEnte_html_aeb83b845962260a0b3ed71785d700604"><div class="ttname"><a href="classEnte.html#aeb83b845962260a0b3ed71785d700604">Ente::gGrafico</a></div><div class="ttdeci">static Gerenciador::Renderer * gGrafico</div><div class="ttdef"><b>Definição</b> Ente.h:19</div></div>
+<div class="ttc" id="aclassGerenciador_1_1Renderer_html"><div class="ttname"><a href="classGerenciador_1_1Renderer.html">Gerenciador::Renderer</a></div><div class="ttdoc">Gerencia a renderização de elementos gráficos.</div><div class="ttdef"><b>Definição</b> Renderer.h:27</div></div>
+<div class="ttc" id="aclassGerenciador_1_1ResourceManager_html"><div class="ttname"><a href="classGerenciador_1_1ResourceManager.html">Gerenciador::ResourceManager</a></div><div class="ttdoc">Gerencia o carregamento e acesso de recursos, como texturas e fontes.</div><div class="ttdef"><b>Definição</b> ResourceManager.h:19</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

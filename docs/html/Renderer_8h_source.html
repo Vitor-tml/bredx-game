@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Prodislexos Game: Código-Fonte de src/engine/Renderer/Renderer.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.jsdelivr.net/gh/jothepro/doxygen-awesome-css@v2.2.0/doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Prodislexos Game
+   </div>
+   <div id="projectbrief">Cyberpunk Game</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="dir_fd4f8af40b0f2c23067bb1970b3f1426.html">Renderer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Renderer.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Renderer_8h.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef RENDERER_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define RENDERER_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceGerenciador.html">Gerenciador</a>{</div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classGerenciador_1_1Renderer.html">   27</a></span><span class="keyword">class </span><a class="code hl_class" href="classGerenciador_1_1Renderer.html">Renderer</a> {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> camadaJanela;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">static</span> <a class="code hl_class" href="classGerenciador_1_1Renderer.html">Renderer</a>* singleton;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    sf::RenderWindow janela;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    sf::View camera;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    std::vector&lt;std::pair&lt;const sf::Drawable*, int&gt;&gt; drawables; </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    sf::Shader shader;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">bool</span> shaderCarregado;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">bool</span> isShader;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    sf::FloatRect caixaDeMovimento ; </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_class" href="classGerenciador_1_1Renderer.html">Renderer</a>(<span class="keywordtype">int</span> largura, <span class="keywordtype">int</span> altura, <span class="keyword">const</span> std::string&amp; titulo);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_class" href="classGerenciador_1_1Renderer.html">~Renderer</a>();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment">// Apagando operações</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classGerenciador_1_1Renderer.html#aea3c3f0a0a1f1738eb7ea15b986b7ee7">   42</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classGerenciador_1_1Renderer.html#aea3c3f0a0a1f1738eb7ea15b986b7ee7">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classGerenciador_1_1Renderer.html">Renderer</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classGerenciador_1_1Renderer.html#ab07144f4a3158e34b100cec606723a32">   43</a></span>    <a class="code hl_function" href="classGerenciador_1_1Renderer.html#ab07144f4a3158e34b100cec606723a32">Renderer</a>(<span class="keyword">const</span> <a class="code hl_class" href="classGerenciador_1_1Renderer.html">Renderer</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">static</span> <a class="code hl_class" href="classGerenciador_1_1Renderer.html">Renderer</a> *<a class="code hl_function" href="classGerenciador_1_1Renderer.html#a87ecf77dfe4ee286b209abc0569d8628">getInstance</a>(<span class="keywordtype">int</span> largura = 1280, <span class="keywordtype">int</span> altura = 720, <span class="keyword">const</span> std::string&amp; titulo = <span class="stringliteral">&quot;Prodilexos Game&quot;</span>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classGerenciador_1_1Renderer.html#a76621b243ef34a41131538e5a89f5c74">addDrawable</a>(<span class="keyword">const</span> sf::Drawable&amp; drawable, <span class="keywordtype">int</span> camada = 4); <span class="comment">// Adiciona um elemento para ser desenhado</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classGerenciador_1_1Renderer.html#af7021acf386f02adf0c19eeaaeab28b3">clearDrawables</a>();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classGerenciador_1_1Renderer.html#aeba6d9c255ab7ba34bdf37753e0d2093">render</a>();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classGerenciador_1_1Renderer.html#a3986cb35f1928f918bb94afa30be2d65">isOpen</a>();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classGerenciador_1_1Renderer.html#a4e7741623f6e43cb0da2fa848c57fa43">close</a>();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classGerenciador_1_1Renderer.html#a4d474480b0fda9a8ad51199bfaf0db61">moveCamera</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classGerenciador_1_1Renderer.html#acbbe05cc9c4b1dbedb033b2e27fbdd70">setCentroCamera</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classGerenciador_1_1Renderer.html#a5a1aae55e6b4186f8f49d88af0f3dec3">setTamanhoCamera</a>(<span class="keywordtype">float</span> largura, <span class="keywordtype">float</span> altura);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classGerenciador_1_1Renderer.html#aa406125c18b3ad419fb3dddea64a9ca5">pollEvent</a>(sf::Event &amp;evento);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    sf::Vector2u <a class="code hl_function" href="classGerenciador_1_1Renderer.html#a218dd0956129a0a96c6ea7eb8603f545">getTamanho</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classGerenciador_1_1Renderer.html#aaba970b49c4f4eab840871a8b2982859">carregarShaders</a>();</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classGerenciador_1_1Renderer.html#aec8a0bff33828963bd513bd9fe145e78">tirarShader</a>();</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    sf::View&amp; <a class="code hl_function" href="classGerenciador_1_1Renderer.html#a28a8e25741ee70ebbee2c3cf032d0668">getView</a>();</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classGerenciador_1_1Renderer.html#a908e0e92c5cb31be5de9d60c079a133e">setMoveBounds</a>(<span class="keyword">const</span> sf::FloatRect&amp; bounds);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classGerenciador_1_1Renderer.html#a461431a690f34c6f68222be7db493047">updateCamera</a>(<span class="keyword">const</span> sf::Vector2f&amp; playerPos);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classGerenciador_1_1Renderer.html#a6bb021db02cbe513b96bb60e108b2b8c">isPlayerOutsideBounds</a>(<span class="keyword">const</span> sf::Vector2f&amp; playerPos) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="classGerenciador_1_1Renderer.html#ab8ccde98f0b80effe96c72f286be19fa">  148</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classGerenciador_1_1Renderer.html#ab8ccde98f0b80effe96c72f286be19fa">setIsShader</a>(<span class="keywordtype">bool</span> sd) { isShader = sd;}</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>};</div>
+</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>}</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="preprocessor">#endif </span><span class="comment">// RENDERER_H</span></div>
+<div class="ttc" id="aclassGerenciador_1_1Renderer_html"><div class="ttname"><a href="classGerenciador_1_1Renderer.html">Gerenciador::Renderer</a></div><div class="ttdoc">Gerencia a renderização de elementos gráficos.</div><div class="ttdef"><b>Definição</b> Renderer.h:27</div></div>
+<div class="ttc" id="aclassGerenciador_1_1Renderer_html_a218dd0956129a0a96c6ea7eb8603f545"><div class="ttname"><a href="classGerenciador_1_1Renderer.html#a218dd0956129a0a96c6ea7eb8603f545">Gerenciador::Renderer::getTamanho</a></div><div class="ttdeci">sf::Vector2u getTamanho() const</div><div class="ttdoc">Retorna o tamanho da janela.</div><div class="ttdef"><b>Definição</b> Renderer.cpp:96</div></div>
+<div class="ttc" id="aclassGerenciador_1_1Renderer_html_a28a8e25741ee70ebbee2c3cf032d0668"><div class="ttname"><a href="classGerenciador_1_1Renderer.html#a28a8e25741ee70ebbee2c3cf032d0668">Gerenciador::Renderer::getView</a></div><div class="ttdeci">sf::View &amp; getView()</div><div class="ttdoc">Retorna a view/câmera atual.</div><div class="ttdef"><b>Definição</b> Renderer.cpp:158</div></div>
+<div class="ttc" id="aclassGerenciador_1_1Renderer_html_a3986cb35f1928f918bb94afa30be2d65"><div class="ttname"><a href="classGerenciador_1_1Renderer.html#a3986cb35f1928f918bb94afa30be2d65">Gerenciador::Renderer::isOpen</a></div><div class="ttdeci">bool isOpen()</div><div class="ttdoc">Retorna o estado da janela.</div><div class="ttdef"><b>Definição</b> Renderer.cpp:84</div></div>
+<div class="ttc" id="aclassGerenciador_1_1Renderer_html_a461431a690f34c6f68222be7db493047"><div class="ttname"><a href="classGerenciador_1_1Renderer.html#a461431a690f34c6f68222be7db493047">Gerenciador::Renderer::updateCamera</a></div><div class="ttdeci">void updateCamera(const sf::Vector2f &amp;playerPos)</div><div class="ttdoc">Atualiza a posição da câmera com base na posição do jogador.</div><div class="ttdef"><b>Definição</b> Renderer.cpp:123</div></div>
+<div class="ttc" id="aclassGerenciador_1_1Renderer_html_a4d474480b0fda9a8ad51199bfaf0db61"><div class="ttname"><a href="classGerenciador_1_1Renderer.html#a4d474480b0fda9a8ad51199bfaf0db61">Gerenciador::Renderer::moveCamera</a></div><div class="ttdeci">void moveCamera(float x, float y)</div><div class="ttdoc">Move o que a janela mostra para o usuário.</div><div class="ttdef"><b>Definição</b> Renderer.cpp:40</div></div>
+<div class="ttc" id="aclassGerenciador_1_1Renderer_html_a4e7741623f6e43cb0da2fa848c57fa43"><div class="ttname"><a href="classGerenciador_1_1Renderer.html#a4e7741623f6e43cb0da2fa848c57fa43">Gerenciador::Renderer::close</a></div><div class="ttdeci">void close()</div><div class="ttdoc">Fecha a janela de execução.</div><div class="ttdef"><b>Definição</b> Renderer.cpp:88</div></div>
+<div class="ttc" id="aclassGerenciador_1_1Renderer_html_a5a1aae55e6b4186f8f49d88af0f3dec3"><div class="ttname"><a href="classGerenciador_1_1Renderer.html#a5a1aae55e6b4186f8f49d88af0f3dec3">Gerenciador::Renderer::setTamanhoCamera</a></div><div class="ttdeci">void setTamanhoCamera(float largura, float altura)</div><div class="ttdoc">Muda o que vai ser mostrado em relação ao que vai ser renderizado.</div><div class="ttdef"><b>Definição</b> Renderer.cpp:48</div></div>
+<div class="ttc" id="aclassGerenciador_1_1Renderer_html_a6bb021db02cbe513b96bb60e108b2b8c"><div class="ttname"><a href="classGerenciador_1_1Renderer.html#a6bb021db02cbe513b96bb60e108b2b8c">Gerenciador::Renderer::isPlayerOutsideBounds</a></div><div class="ttdeci">bool isPlayerOutsideBounds(const sf::Vector2f &amp;playerPos) const</div><div class="ttdef"><b>Definição</b> Renderer.cpp:162</div></div>
+<div class="ttc" id="aclassGerenciador_1_1Renderer_html_a76621b243ef34a41131538e5a89f5c74"><div class="ttname"><a href="classGerenciador_1_1Renderer.html#a76621b243ef34a41131538e5a89f5c74">Gerenciador::Renderer::addDrawable</a></div><div class="ttdeci">void addDrawable(const sf::Drawable &amp;drawable, int camada=4)</div><div class="ttdoc">Adiciona elementos na fila de renderização.</div><div class="ttdef"><b>Definição</b> Renderer.cpp:32</div></div>
+<div class="ttc" id="aclassGerenciador_1_1Renderer_html_a87ecf77dfe4ee286b209abc0569d8628"><div class="ttname"><a href="classGerenciador_1_1Renderer.html#a87ecf77dfe4ee286b209abc0569d8628">Gerenciador::Renderer::getInstance</a></div><div class="ttdeci">static Renderer * getInstance(int largura=1280, int altura=720, const std::string &amp;titulo=&quot;Prodilexos Game&quot;)</div><div class="ttdoc">Retorna uma instância para o gerenciador gráfico.</div><div class="ttdef"><b>Definição</b> Renderer.cpp:24</div></div>
+<div class="ttc" id="aclassGerenciador_1_1Renderer_html_a908e0e92c5cb31be5de9d60c079a133e"><div class="ttname"><a href="classGerenciador_1_1Renderer.html#a908e0e92c5cb31be5de9d60c079a133e">Gerenciador::Renderer::setMoveBounds</a></div><div class="ttdeci">void setMoveBounds(const sf::FloatRect &amp;bounds)</div><div class="ttdoc">Define os limites de movimento da câmera.</div><div class="ttdef"><b>Definição</b> Renderer.cpp:119</div></div>
+<div class="ttc" id="aclassGerenciador_1_1Renderer_html_aa406125c18b3ad419fb3dddea64a9ca5"><div class="ttname"><a href="classGerenciador_1_1Renderer.html#aa406125c18b3ad419fb3dddea64a9ca5">Gerenciador::Renderer::pollEvent</a></div><div class="ttdeci">bool pollEvent(sf::Event &amp;evento)</div><div class="ttdoc">Lê os eventos do jogo (interações com a janela).</div><div class="ttdef"><b>Definição</b> Renderer.cpp:92</div></div>
+<div class="ttc" id="aclassGerenciador_1_1Renderer_html_aaba970b49c4f4eab840871a8b2982859"><div class="ttname"><a href="classGerenciador_1_1Renderer.html#aaba970b49c4f4eab840871a8b2982859">Gerenciador::Renderer::carregarShaders</a></div><div class="ttdeci">void carregarShaders()</div><div class="ttdoc">Carrega os shaders.</div><div class="ttdef"><b>Definição</b> Renderer.cpp:100</div></div>
+<div class="ttc" id="aclassGerenciador_1_1Renderer_html_ab07144f4a3158e34b100cec606723a32"><div class="ttname"><a href="classGerenciador_1_1Renderer.html#ab07144f4a3158e34b100cec606723a32">Gerenciador::Renderer::Renderer</a></div><div class="ttdeci">Renderer(const Renderer &amp;)=delete</div></div>
+<div class="ttc" id="aclassGerenciador_1_1Renderer_html_ab8ccde98f0b80effe96c72f286be19fa"><div class="ttname"><a href="classGerenciador_1_1Renderer.html#ab8ccde98f0b80effe96c72f286be19fa">Gerenciador::Renderer::setIsShader</a></div><div class="ttdeci">void setIsShader(bool sd)</div><div class="ttdef"><b>Definição</b> Renderer.h:148</div></div>
+<div class="ttc" id="aclassGerenciador_1_1Renderer_html_acbbe05cc9c4b1dbedb033b2e27fbdd70"><div class="ttname"><a href="classGerenciador_1_1Renderer.html#acbbe05cc9c4b1dbedb033b2e27fbdd70">Gerenciador::Renderer::setCentroCamera</a></div><div class="ttdeci">void setCentroCamera(float x, float y)</div><div class="ttdoc">Muda a origem da câmera em relação ao que vai ser mostrado.</div><div class="ttdef"><b>Definição</b> Renderer.cpp:44</div></div>
+<div class="ttc" id="aclassGerenciador_1_1Renderer_html_aea3c3f0a0a1f1738eb7ea15b986b7ee7"><div class="ttname"><a href="classGerenciador_1_1Renderer.html#aea3c3f0a0a1f1738eb7ea15b986b7ee7">Gerenciador::Renderer::operator=</a></div><div class="ttdeci">void operator=(const Renderer &amp;)=delete</div></div>
+<div class="ttc" id="aclassGerenciador_1_1Renderer_html_aeba6d9c255ab7ba34bdf37753e0d2093"><div class="ttname"><a href="classGerenciador_1_1Renderer.html#aeba6d9c255ab7ba34bdf37753e0d2093">Gerenciador::Renderer::render</a></div><div class="ttdeci">void render()</div><div class="ttdoc">Limpa a tela atual e renderiza os elementos da lista drawables.</div><div class="ttdef"><b>Definição</b> Renderer.cpp:52</div></div>
+<div class="ttc" id="aclassGerenciador_1_1Renderer_html_aec8a0bff33828963bd513bd9fe145e78"><div class="ttname"><a href="classGerenciador_1_1Renderer.html#aec8a0bff33828963bd513bd9fe145e78">Gerenciador::Renderer::tirarShader</a></div><div class="ttdeci">void tirarShader()</div><div class="ttdoc">Remove os shaders.</div><div class="ttdef"><b>Definição</b> Renderer.cpp:114</div></div>
+<div class="ttc" id="aclassGerenciador_1_1Renderer_html_af7021acf386f02adf0c19eeaaeab28b3"><div class="ttname"><a href="classGerenciador_1_1Renderer.html#af7021acf386f02adf0c19eeaaeab28b3">Gerenciador::Renderer::clearDrawables</a></div><div class="ttdeci">void clearDrawables()</div><div class="ttdoc">Limpa a fila de renderização.</div><div class="ttdef"><b>Definição</b> Renderer.cpp:36</div></div>
+<div class="ttc" id="anamespaceGerenciador_html"><div class="ttname"><a href="namespaceGerenciador.html">Gerenciador</a></div><div class="ttdoc">Componentes de funções básicas do jogo como renderização, carregamento de recursos,...</div><div class="ttdef"><b>Definição</b> CollisionManager.cpp:4</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>
