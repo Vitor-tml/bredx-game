@@ -4,6 +4,7 @@ Também faz parte do projeto a interação entre o desenvolvedor e os artistas r
 Código: Vitor-tml
 Assets: Brenda Alves
 Música: João Manfron
+Documentação: https://vitor-tml.github.io/bredx-game/index.html
 
 ## Introdução
 
