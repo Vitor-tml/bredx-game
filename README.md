@@ -1,10 +1,10 @@
 # Prodislex Game
 Este é um projeto de um jogo de plataforma 2D desenvolvido em C++ com foco em criar uma game engine personalizada que suporte mecânicas complexas de jogos de plataforma.
 Também faz parte do projeto a interação entre o desenvolvedor e os artistas responsáveis pela criação de assets visuais e de som, para garantir que o jogo seja atraente.
-Código: Vitor-tml
-Assets: Brenda Alves
-Música: João Manfron
-Documentação: https://vitor-tml.github.io/bredx-game/index.html
+<br>Código: Vitor-tml
+<br>Assets: Brenda Alves
+<br>Música: João Manfron
+<br>Documentação: https://vitor-tml.github.io/bredx-game/index.html
 
 ## Introdução
 
