@@ -51,6 +51,7 @@ void GameScene::inicializar()
     musica = gRecursos->getMusic("game");
     musica->play();
     musica->setLoop(true);
+    musica->setVolume(30); // Ajuste o volume conforme necessário
 
     janela->setMoveBounds(sf::FloatRect(200, 200, 100, 300)); // Exemplo de retângulo de 200x200
     janela->setIsShader(true);

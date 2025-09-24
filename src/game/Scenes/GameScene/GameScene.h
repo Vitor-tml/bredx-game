@@ -5,7 +5,6 @@
 #include "../../../engine/CollisionManager/CollisionManager.h"
 #include "../../../engine/TileMap/TileMap.h"
 #include "../../../engine/SceneManager/Scene.h"
-#include "../../../engine/SceneManager/Scene.h"
 #include "../../../engine/SceneManager/SceneManager.h"
 #include "../../../engine/Paralaxe/Paralaxe.h"
 #include "../MenuScene/MenuScene.h"

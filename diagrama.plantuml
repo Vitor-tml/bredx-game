@@ -5,12 +5,58 @@ skinparam backgroundColor #1e1e1e
 skinparam defaultFontColor #ffffff
 skinparam shadowing false
 
-' Cores personalizadas para melhor contraste
+' Cores específicas para diferentes tipos de classes
 skinparam class {
-    BackgroundColor #2d2d2d
-    BorderColor #4a9eff
     ArrowColor #4a9eff
     FontColor #ffffff
+}
+
+' MANAGERS - Azul (Singletons e Gerenciadores)
+skinparam class<<Manager>> {
+    BackgroundColor #1f4e79
+    BorderColor #4a9eff
+    FontColor #ffffff
+    HeaderBackgroundColor #2d5aa0
+}
+
+' COMPONENTS - Verde (Componentes reutilizáveis)
+skinparam class<<Component>> {
+    BackgroundColor #2d5a3d
+    BorderColor #4caf50
+    FontColor #ffffff
+    HeaderBackgroundColor #388e3c
+}
+
+' ENTITIES - Laranja (Entidades do jogo)
+skinparam class<<Entity>> {
+    BackgroundColor #664228
+    BorderColor #ff9800
+    FontColor #ffffff
+    HeaderBackgroundColor #8d5a00
+}
+
+' SCENES - Roxo (Cenas e interface)
+skinparam class<<Scene>> {
+    BackgroundColor #4a2c5a
+    BorderColor #9c27b0
+    FontColor #ffffff
+    HeaderBackgroundColor #7b1fa2
+}
+
+' UTILITIES - Cinza (Utilitários e auxiliares)
+skinparam class<<Utility>> {
+    BackgroundColor #424242
+    BorderColor #757575
+    FontColor #ffffff
+    HeaderBackgroundColor #616161
+}
+
+' BASE CLASSES - Vermelho escuro (Classes base abstratas)
+skinparam class<<Abstract>> {
+    BackgroundColor #5d2e2e
+    BorderColor #e57373
+    FontColor #ffffff
+    HeaderBackgroundColor #8e0000
 }
 
 skinparam note {
@@ -29,7 +75,7 @@ skinparam stereotype {
 ' ===================
 namespace Gerenciador {
     
-    class Renderer {
+    class Renderer <<Manager>> {
         - {static} singleton: Renderer*
         - janela: sf::RenderWindow
         - camera: sf::View
@@ -60,7 +106,7 @@ namespace Gerenciador {
         + setIsShader(sd: bool)
     }
 
-    class ResourceManager {
+    class ResourceManager <<Manager>> {
         - {static} singleton: ResourceManager*
         - texturas: unordered_map<string, sf::Texture>
         - fontes: unordered_map<string, sf::Font>
@@ -82,7 +128,7 @@ namespace Gerenciador {
         + getMusic(id: string): sf::Music*
     }
 
-    class CollisionManager {
+    class CollisionManager <<Manager>> {
         - entidades: unordered_set<Entity*>
         + CollisionManager()
         + ~CollisionManager()
@@ -96,7 +142,7 @@ namespace Gerenciador {
 ' ===================
 ' CLASSE BASE ENTE
 ' ===================
-class Ente {
+class Ente <<Abstract>> {
     # id: int
     # {static} cont: int
     # {static} gGrafico: Renderer*
@@ -116,7 +162,7 @@ class Ente {
 ' ===================
 ' SISTEMA DE FÍSICA
 ' ===================
-class PhysicsComponent {
+class PhysicsComponent <<Component>> {
     - {static} gravidade: float
     - velocidade: sf::Vector2f*
     - posicao: sf::Vector2f*
@@ -134,7 +180,7 @@ class PhysicsComponent {
 ' ===================
 ' SISTEMA DE ANIMAÇÃO
 ' ===================
-class Animation {
+class Animation <<Component>> {
     - frames: vector<sf::IntRect>
     - spriteSheet: sf::Texture*
     - frameDuration: float
@@ -153,7 +199,7 @@ class Animation {
 ' ===================
 ' ENTIDADES DO JOGO
 ' ===================
-class Entity {
+class Entity <<Entity>> {
     # posicao: sf::Vector2f
     # velocidade: sf::Vector2f
     # colisao: bool
@@ -181,7 +227,7 @@ class Entity {
     + getColisao(): bool
 }
 
-class Character {
+class Character <<Entity>> {
     - vida: int
     - ataque: int
     + Character(textura: sf::Texture&, x: int, y: int, life: int, atack: int)
@@ -189,7 +235,7 @@ class Character {
     + executar(deltaTime: float)
 }
 
-class Player {
+class Player <<Entity>> {
     - pontos: int
     - velocidadeHorizontal: float
     - walkAnimation: Animation
@@ -207,7 +253,7 @@ class Player {
 ' SISTEMA DE TILES
 ' ===================
 namespace TileEngine {
-    class TileEntity {
+    class TileEntity <<Entity>> {
         - id: int
         + TileEntity(textura: sf::Texture&, x: int, y: int, xTile: int, yTile: int, tileSize: int, colide: bool)
         + ~TileEntity()
@@ -216,7 +262,7 @@ namespace TileEngine {
         + colidiu(e: Entity*)
     }
 
-    class TileMap {
+    class TileMap <<Manager>> {
         - tileSize: int
         - height: int
         - width: int
@@ -241,13 +287,13 @@ namespace TileEngine {
 ' ===================
 ' SISTEMA DE PARALAXE
 ' ===================
-struct Camada {
+struct Camada <<Utility>> {
     sprite: sf::Sprite[2]
     velocidade: float
     camada: float
 }
 
-class Parallax {
+class Parallax <<Utility>> {
     - layers: vector<Camada*>
     - lastCameraPosition: sf::Vector2f
     - multiplicadorParalax: float
@@ -263,7 +309,7 @@ class Parallax {
 ' ===================
 ' SISTEMA DE CENAS
 ' ===================
-abstract class Scene {
+abstract class Scene <<Scene>> {
     + janela: Renderer*
     + gRecursos: ResourceManager*
     + tempo: sf::Clock
@@ -279,7 +325,7 @@ abstract class Scene {
     + retomar()
 }
 
-class SceneManager {
+class SceneManager <<Manager>> {
     - {static} singleton: SceneManager*
     - cenas: stack<unique_ptr<Scene>>
     - fadeShape: sf::RectangleShape
@@ -300,7 +346,7 @@ class SceneManager {
     + processarEventosCenaAtual(evento: sf::Event&)
 }
 
-class MenuScene {
+class MenuScene <<Scene>> {
     - background: sf::Sprite
     - button: sf::Sprite[2]
     - select: sf::Sprite[2]
@@ -316,7 +362,7 @@ class MenuScene {
     + finalizar()
 }
 
-class GameScene {
+class GameScene <<Scene>> {
     - gColisao: CollisionManager
     - map: TileMap
     - cenario: Parallax
@@ -332,7 +378,7 @@ class GameScene {
     + processarEventos(evento: sf::Event&)
 }
 
-class CreditsScene {
+class CreditsScene <<Scene>> {
     - creditsText: sf::Text
     - font: sf::Font
     - background: sf::RectangleShape
@@ -351,7 +397,7 @@ class CreditsScene {
 ' ===================
 ' CLASSE PRINCIPAL
 ' ===================
-class Game {
+class Game <<Manager>> {
     - janela: Renderer*
     - gCenas: SceneManager*
     - cenaJogo: GameScene*
@@ -395,8 +441,11 @@ Scene ..> Gerenciador.ResourceManager
 Gerenciador.CollisionManager ..> Entity
 
 ' Singletons
-Gerenciador.Renderer : <<Singleton>>
-Gerenciador.ResourceManager : <<Singleton>>
-SceneManager : <<Singleton>>
+Gerenciador.Renderer : <<Manager>>
+Gerenciador.ResourceManager : <<Manager>>
+SceneManager : <<Manager>>
+
+' Legenda de cores
+note top : **LEGENDA DE CORES**\n🔵 **AZUL** - Managers/Singletons\n🟢 **VERDE** - Components\n🟠 **LARANJA** - Entities\n🟣 **ROXO** - Scenes\n⚪ **CINZA** - Utilities\n🔴 **VERMELHO** - Abstract Classes
 
 @enduml

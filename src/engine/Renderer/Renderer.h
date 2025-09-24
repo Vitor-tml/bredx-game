@@ -26,8 +26,9 @@ namespace Gerenciador{
 */
 class Renderer {
 private:
-    static int camadaJanela;
     static Renderer* singleton;
+    static int camadaJanela;
+    
     sf::RenderWindow janela;
     sf::View camera;
     std::vector<std::pair<const sf::Drawable*, int>> drawables; ///< vetor de pares de int e drawable
