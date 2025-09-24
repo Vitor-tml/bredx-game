@@ -1,0 +1,402 @@
+@startuml
+!theme cyborg-outline
+skinparam classAttributeIconSize 0
+skinparam backgroundColor #1e1e1e
+skinparam defaultFontColor #ffffff
+skinparam shadowing false
+
+' Cores personalizadas para melhor contraste
+skinparam class {
+    BackgroundColor #2d2d2d
+    BorderColor #4a9eff
+    ArrowColor #4a9eff
+    FontColor #ffffff
+}
+
+skinparam note {
+    BackgroundColor #3a3a3a
+    BorderColor #4a9eff
+    FontColor #ffffff
+}
+
+skinparam stereotype {
+    CBackgroundColor #4a9eff
+    CFontColor #000000
+}
+
+' ===================
+' NAMESPACE GERENCIADOR
+' ===================
+namespace Gerenciador {
+    
+    class Renderer {
+        - {static} singleton: Renderer*
+        - janela: sf::RenderWindow
+        - camera: sf::View
+        - drawables: vector<pair<Drawable*, int>>
+        - shader: sf::Shader
+        - shaderCarregado: bool
+        - isShader: bool
+        - caixaDeMovimento: sf::FloatRect
+        - Renderer(largura: int, altura: int, titulo: string)
+        - ~Renderer()
+        + {static} getInstance(largura: int, altura: int, titulo: string): Renderer*
+        + addDrawable(drawable: sf::Drawable&, camada: int)
+        + clearDrawables()
+        + render()
+        + isOpen(): bool
+        + close()
+        + moveCamera(x: float, y: float)
+        + setCentroCamera(x: float, y: float)
+        + setTamanhoCamera(largura: float, altura: float)
+        + pollEvent(evento: sf::Event&): bool
+        + getTamanho(): sf::Vector2u
+        + carregarShaders()
+        + tirarShader()
+        + getView(): sf::View&
+        + setMoveBounds(bounds: sf::FloatRect&)
+        + updateCamera(playerPos: sf::Vector2f&)
+        + isPlayerOutsideBounds(playerPos: sf::Vector2f&): bool
+        + setIsShader(sd: bool)
+    }
+
+    class ResourceManager {
+        - {static} singleton: ResourceManager*
+        - texturas: unordered_map<string, sf::Texture>
+        - fontes: unordered_map<string, sf::Font>
+        - imagens: unordered_map<string, sf::Image>
+        - sons: unordered_map<string, sf::SoundBuffer>
+        - musicas: unordered_map<string, sf::Music*>
+        - ResourceManager()
+        - ~ResourceManager()
+        + {static} getInstance(): ResourceManager*
+        + loadTexture(id: string, filename: string): bool
+        + loadFont(id: string, filename: string): bool
+        + loadImage(id: string, filename: string): bool
+        + loadSons(id: string, filename: string): bool
+        + loadMusic(id: string, filename: string): bool
+        + getTexture(id: string): sf::Texture&
+        + getFont(id: string): sf::Font&
+        + getImage(id: string): sf::Image&
+        + getSom(id: string): sf::SoundBuffer&
+        + getMusic(id: string): sf::Music*
+    }
+
+    class CollisionManager {
+        - entidades: unordered_set<Entity*>
+        + CollisionManager()
+        + ~CollisionManager()
+        + addEntity(entity: Entity*)
+        + removeEntity(entity: Entity*)
+        + tratarColisoes()
+        + verificaColisao(a: Entity*, b: Entity*): bool
+    }
+}
+
+' ===================
+' CLASSE BASE ENTE
+' ===================
+class Ente {
+    # id: int
+    # {static} cont: int
+    # {static} gGrafico: Renderer*
+    # {static} gRecursos: ResourceManager*
+    # sprite: sf::Sprite
+    + Ente()
+    + Ente(figura: sf::Texture&)
+    + {abstract} ~Ente()
+    + renderizar(camada: int)
+    + getSprite(): sf::Sprite
+    + setTexture(textura: sf::Texture&)
+    + setSize(size: sf::Vector2f&)
+    + getOrigin(): sf::Vector2f
+    + getId(): int
+}
+
+' ===================
+' SISTEMA DE FÍSICA
+' ===================
+class PhysicsComponent {
+    - {static} gravidade: float
+    - velocidade: sf::Vector2f*
+    - posicao: sf::Vector2f*
+    - estaNoChao: bool
+    - pulando: bool
+    - forcaPulo: float
+    + PhysicsComponent(position: sf::Vector2f*, speed: sf::Vector2f*, fPulo: float)
+    + ~PhysicsComponent()
+    + aplicaFisica(deltaTime: float)
+    + setNoChao(estado: bool)
+    + getNoChao(): bool
+    + pular(forcaPulo: float)
+}
+
+' ===================
+' SISTEMA DE ANIMAÇÃO
+' ===================
+class Animation {
+    - frames: vector<sf::IntRect>
+    - spriteSheet: sf::Texture*
+    - frameDuration: float
+    - elapsedTime: float
+    - currentFrame: size_t
+    - isLooping: bool
+    + Animation()
+    + addFrame(rect: sf::IntRect&)
+    + setSpriteSheet(texture: sf::Texture&)
+    + setFrameDuration(duration: float)
+    + setLooping(loop: bool)
+    + update(deltaTime: float)
+    + applyToSprite(sprite: sf::Sprite&)
+}
+
+' ===================
+' ENTIDADES DO JOGO
+' ===================
+class Entity {
+    # posicao: sf::Vector2f
+    # velocidade: sf::Vector2f
+    # colisao: bool
+    # hitBox: sf::RectangleShape
+    # fisica: PhysicsComponent
+    # hitBoxSize: sf::Vector2f
+    # hitBoxOffset: sf::Vector2f
+    + Entity(x: int, y: int)
+    + Entity(textura: sf::Texture&, x: int, y: int, colide: bool)
+    + {abstract} ~Entity()
+    + {abstract} executar(deltaTime: float)
+    + getHitBox(): sf::RectangleShape&
+    + setPosicao(x: int, y: int)
+    + setPosicao(novaPosicao: sf::Vector2f)
+    + getPosicao(): sf::Vector2f
+    + setOrigin()
+    + criarHitBox()
+    + setHitBoxSize(size: sf::Vector2f)
+    + setHitBoxOffset(offset: sf::Vector2f)
+    + atualizaHitBox()
+    + setNoChao(noChao: bool)
+    + getNoChao(): bool
+    + {abstract} colidiu(other: Entity*)
+    + colidiuComTile(e: Entity*)
+    + getColisao(): bool
+}
+
+class Character {
+    - vida: int
+    - ataque: int
+    + Character(textura: sf::Texture&, x: int, y: int, life: int, atack: int)
+    + {abstract} ~Character()
+    + executar(deltaTime: float)
+}
+
+class Player {
+    - pontos: int
+    - velocidadeHorizontal: float
+    - walkAnimation: Animation
+    - idleAnimation: Animation
+    - currentAnimation: Animation*
+    - isMoving: bool
+    + Player(textura: sf::Texture&, x: int, y: int, life: int, atack: int, points: int)
+    + ~Player()
+    + executar(deltaTime: float)
+    + colidiu(other: Entity*)
+    + pular()
+}
+
+' ===================
+' SISTEMA DE TILES
+' ===================
+namespace TileEngine {
+    class TileEntity {
+        - id: int
+        + TileEntity(textura: sf::Texture&, x: int, y: int, xTile: int, yTile: int, tileSize: int, colide: bool)
+        + ~TileEntity()
+        + executar(deltaTime: float)
+        + colidiuComTile(e: Entity*)
+        + colidiu(e: Entity*)
+    }
+
+    class TileMap {
+        - tileSize: int
+        - height: int
+        - width: int
+        - matrizTiles: vector<vector<int>>
+        - matrizEntidades: vector<vector<TileEntity*>>
+        - coordenadas: vector<vector<sf::Vector2f>>
+        - lTiles: vector<TileEntity*>
+        - sheet: sf::Texture
+        + TileMap()
+        + ~TileMap()
+        + loadMapFromFile(filename: string)
+        + loadSheet(textura: sf::Texture&)
+        + getEntitys(): vector<Entity*>
+        + getOrigem(): sf::Vector2f
+        + atualizarCoordenadas(view: sf::View&)
+        + atualizarTiles()
+        + atualizarMapa(camera: sf::View&)
+        + moverColunas(direcao: int)
+    }
+}
+
+' ===================
+' SISTEMA DE PARALAXE
+' ===================
+struct Camada {
+    sprite: sf::Sprite[2]
+    velocidade: float
+    camada: float
+}
+
+class Parallax {
+    - layers: vector<Camada*>
+    - lastCameraPosition: sf::Vector2f
+    - multiplicadorParalax: float
+    + Parallax()
+    + ~Parallax()
+    + addLayer(textura: sf::Texture&, speed: float, camada: int)
+    + atualizar(camera: sf::View&)
+    + renderizar()
+    + setPosition(origem: sf::Vector2f)
+    + estenderLayer(camera: sf::View&)
+}
+
+' ===================
+' SISTEMA DE CENAS
+' ===================
+abstract class Scene {
+    + janela: Renderer*
+    + gRecursos: ResourceManager*
+    + tempo: sf::Clock
+    + deltaTime: float
+    + Scene()
+    + {abstract} ~Scene()
+    + {abstract} inicializar()
+    + {abstract} finalizar()
+    + {abstract} executar()
+    + {abstract} renderizar()
+    + {abstract} processarEventos(evento: sf::Event&)
+    + pausar()
+    + retomar()
+}
+
+class SceneManager {
+    - {static} singleton: SceneManager*
+    - cenas: stack<unique_ptr<Scene>>
+    - fadeShape: sf::RectangleShape
+    - fadeOpacity: float
+    - fadingIn: bool
+    - fadingOut: bool
+    - nextScene: unique_ptr<Scene>
+    - SceneManager()
+    - startFadeIn()
+    - startFadeOut(novaCena: unique_ptr<Scene>)
+    + ~SceneManager()
+    + {static} getInstance(): SceneManager*
+    + mudarCena(novaCena: unique_ptr<Scene>)
+    + empilharCena(novaCena: unique_ptr<Scene>)
+    + desempilharCena()
+    + atualizarCenaAtual()
+    + renderizarCenaAtual()
+    + processarEventosCenaAtual(evento: sf::Event&)
+}
+
+class MenuScene {
+    - background: sf::Sprite
+    - button: sf::Sprite[2]
+    - select: sf::Sprite[2]
+    - music: sf::Music*
+    - selectedButton: int
+    - selecionarBotao(index: int)
+    + MenuScene()
+    + ~MenuScene()
+    + inicializar()
+    + executar()
+    + renderizar()
+    + processarEventos(evento: sf::Event&)
+    + finalizar()
+}
+
+class GameScene {
+    - gColisao: CollisionManager
+    - map: TileMap
+    - cenario: Parallax
+    - player: Player*
+    - lEntidades: vector<Entity*>
+    - musica: sf::Music*
+    + GameScene()
+    + ~GameScene()
+    + inicializar()
+    + executar()
+    + renderizar()
+    + finalizar()
+    + processarEventos(evento: sf::Event&)
+}
+
+class CreditsScene {
+    - creditsText: sf::Text
+    - font: sf::Font
+    - background: sf::RectangleShape
+    - clock: sf::Clock
+    - music: sf::Music*
+    - elapsedTime: float
+    + CreditsScene()
+    + ~CreditsScene()
+    + inicializar()
+    + executar()
+    + renderizar()
+    + processarEventos(evento: sf::Event&)
+    + finalizar()
+}
+
+' ===================
+' CLASSE PRINCIPAL
+' ===================
+class Game {
+    - janela: Renderer*
+    - gCenas: SceneManager*
+    - cenaJogo: GameScene*
+    + Game()
+    + ~Game()
+    + executar()
+}
+
+' ===================
+' RELACIONAMENTOS
+' ===================
+
+' Herança
+Ente <|-- Entity
+Ente <|-- Parallax
+Entity <|-- Character
+Entity <|-- TileEngine.TileEntity
+Character <|-- Player
+Scene <|-- MenuScene
+Scene <|-- GameScene
+Scene <|-- CreditsScene
+
+' Composição e Agregação
+Entity *-- PhysicsComponent
+Player *-- Animation
+Parallax *-- Camada
+TileEngine.TileMap *-- TileEngine.TileEntity
+SceneManager *-- Scene
+Game *-- Gerenciador.Renderer
+Game *-- SceneManager
+GameScene *-- Gerenciador.CollisionManager
+GameScene *-- TileEngine.TileMap
+GameScene *-- Parallax
+GameScene *-- Player
+
+' Dependências
+Ente ..> Gerenciador.Renderer
+Ente ..> Gerenciador.ResourceManager
+Scene ..> Gerenciador.Renderer
+Scene ..> Gerenciador.ResourceManager
+Gerenciador.CollisionManager ..> Entity
+
+' Singletons
+Gerenciador.Renderer : <<Singleton>>
+Gerenciador.ResourceManager : <<Singleton>>
+SceneManager : <<Singleton>>
+
+@enduml

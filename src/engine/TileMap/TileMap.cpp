@@ -130,13 +130,16 @@ void TileMap::moverColunas(int direcao)
             coordenadasNovas[k] = coordenadas[k][width - 1];
             tempTile[k] = matrizEntidades[k][width - 1];
         }
-        // Coloca todas as colunas uma posicao pra frente
-        for(int i = height - 1; i >= 0;  i--) {
-            for(int j = width - 1; j >= 0; j--){
+        
+        // CORREÇÃO: Coloca todas as colunas uma posicao pra frente
+        // O problema estava no loop - estava tentando acessar j-1 quando j=0
+        for(int i = 0; i < height; i++) {
+            for(int j = width - 1; j > 0; j--){ // Mudança: j > 0 ao invés de j >= 0
                 coordenadas[i][j] = coordenadas[i][j - 1];
-                matrizEntidades[i][j] = matrizEntidades[i][j -  1];
+                matrizEntidades[i][j] = matrizEntidades[i][j - 1];
             }
         }
+        
         // Coloca a coluna modificada no início
         for(int i = 0; i < height; i++)
         {
@@ -153,15 +156,18 @@ void TileMap::moverColunas(int direcao)
             coordenadasNovas[k] = coordenadas[k][0];
             tempTile[k] = matrizEntidades[k][0];
         }
-        // Coloca todas as colunas uma posicao pra tras
+        
+        // CORREÇÃO: Coloca todas as colunas uma posicao pra tras
+        // O problema estava no loop - estava tentando acessar j+1 quando j=width-1
         for(int i = 0; i < height; i++) {
-            for(int j = 0; j < width; j++){
+            for(int j = 0; j < width - 1; j++){ // Mudança: j < width - 1 ao invés de j < width
                 coordenadas[i][j] = coordenadas[i][j + 1];
                 matrizEntidades[i][j] = matrizEntidades[i][j + 1];
             }
         }
-        // Colocar a coluna modificada no início
-        for(int i = 0;  i < height; i++)
+        
+        // Colocar a coluna modificada no fim
+        for(int i = 0; i < height; i++)
         {
             coordenadas[i][width - 1] = coordenadasNovas[i];
             matrizEntidades[i][width - 1] = tempTile[i];
