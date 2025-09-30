@@ -1,8 +1,13 @@
 #ifndef _MENUSCENE_H
 #define _MENUSCENE_H
 
-#include "../../../engine/SceneManager/Scene.h"
-#include "../../Entity/Entity.h" 
+#include "engine/graphics/Renderer/Renderer.h"
+#include "engine/core/ResourceManager/ResourceManager.h"
+#include "MenuScene.h"
+#include "game/Scenes/GameScene/GameScene.h"
+#include "game/Scenes/CreditsScene/CreditsScene.h"
+#include "engine/core/SceneManager/SceneManager.h"
+#include <iostream>
 
 class MenuScene : public Scene {
 private:

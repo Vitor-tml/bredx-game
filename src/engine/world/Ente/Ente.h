@@ -2,8 +2,8 @@
 #define _ENTE_H
 
 #include <SFML/Graphics.hpp>
-#include "../Renderer/Renderer.h"
-#include "../ResourceManager/ResourceManager.h"
+#include "engine/graphics/Renderer/Renderer.h"
+#include "engine/core/ResourceManager/ResourceManager.h"
 /**
  * @class Ente
  * @brief Classe base para todos os elementos visuais do jogo.

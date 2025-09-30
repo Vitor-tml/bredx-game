@@ -1,7 +1,7 @@
 #ifndef _CHARACTER_H
 #define _CHARACTER_H
 
-#include "../Entity.h"
+#include "game/entities/Entity/Entity.h"
 
 /**
  * @class Character

@@ -2,13 +2,13 @@
 #define _GAMESCENE_H
 
 #include <iostream>
-#include "../../../engine/CollisionManager/CollisionManager.h"
-#include "../../../engine/TileMap/TileMap.h"
-#include "../../../engine/SceneManager/Scene.h"
-#include "../../../engine/SceneManager/SceneManager.h"
-#include "../../../engine/Paralaxe/Paralaxe.h"
-#include "../MenuScene/MenuScene.h"
-#include "../../Entity/Entity.h" 
+#include "engine/physics/CollisionManager/CollisionManager.h"
+#include "engine/world/TileMap/TileMap.h"
+#include "engine/core/SceneManager/Scene.h"
+#include "engine/core/SceneManager/SceneManager.h"
+#include "engine/graphics/Paralaxe/Paralaxe.h"
+#include "game/Scenes/MenuScene/MenuScene.h"
+#include "game/entities/Entity/Entity.h"
 
 class GameScene : public Scene {
 private:

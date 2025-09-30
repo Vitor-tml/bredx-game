@@ -1,9 +1,9 @@
 #ifndef CREDITS_SCENE_H
 #define CREDITS_SCENE_H
 
-#include "../../../engine/SceneManager/Scene.h"
-#include "../../../engine/SceneManager/SceneManager.h"
-#include "../MenuScene/MenuScene.h"
+#include "engine/core/SceneManager/Scene.h"
+#include "engine/core/SceneManager/SceneManager.h"
+#include "game/Scenes/MenuScene/MenuScene.h"
 #include <SFML/Graphics.hpp>
 #include <string>
 

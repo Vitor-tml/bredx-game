@@ -1,8 +1,8 @@
 #ifndef _COLLISIONMANAGER_H
 #define _COLLISIONMANAGER_H
 
-#include "../../game/Entity/Entity.h"
-#include "../../game/Entity/Character/Player/Player.h"
+#include "game/entities/Entity/Entity.h"
+#include "game/entities/Player/Player.h"
 #include <unordered_set>
 
 namespace Gerenciador {

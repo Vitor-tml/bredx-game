@@ -1,14 +1,14 @@
 #pragma once
 
-#include "../engine/Renderer/Renderer.h"
-#include "../engine/CollisionManager/CollisionManager.h"
-#include "./Entity/Entity.h" 
-#include "./Entity/Character/Player/Player.h" 
-#include "../engine/TileMap/TileMap.h"
-#include "../engine/SceneManager/SceneManager.h"
-#include "./Scenes/GameScene/GameScene.h"
-#include "./Scenes/MenuScene/MenuScene.h"
-#include <vector> 
+#include "engine/graphics/Renderer/Renderer.h"
+#include "engine/physics/CollisionManager/CollisionManager.h"
+#include "game/entities/Entity/Entity.h"
+#include "game/entities/Player/Player.h"
+#include "engine/world/TileMap/TileMap.h"
+#include "engine/core/SceneManager/SceneManager.h"
+#include "game/Scenes/GameScene/GameScene.h"
+#include "game/Scenes/MenuScene/MenuScene.h"
+#include <vector>
 
 /**
  * @class Game

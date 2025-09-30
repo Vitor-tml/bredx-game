@@ -1,8 +1,8 @@
 #ifndef _PLAYER_H
 #define _PLAYER_H
 
-#include "../Character.h"
-#include "../../../../engine/Animation/Animation.h"
+#include "game/entities/Character/Character.h"
+#include "engine/graphics/Animation/Animation.h"
 /**
  * @class Player
  * @brief Representa o jogador no jogo

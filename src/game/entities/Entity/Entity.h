@@ -1,8 +1,9 @@
 #ifndef _ENTITY_H_
 #define _ENTITY_H_
 
-#include "../../engine/Ente/Ente.h"
-#include "../../engine/PhysicsComponent/PhysicsComponent.h"
+#include "engine/world/Ente/Ente.h"
+#include "engine/physics/PhysicsComponent/PhysicsComponent.h"
+
 
 /**
  * @class Entity

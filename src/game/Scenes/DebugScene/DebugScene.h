@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../../../engine/SceneManager/Scene.h"
-#include "../../../engine/SceneManager/SceneManager.h"
+#include "engine/core/SceneManager/Scene.h"
+#include "engine/core/SceneManager/SceneManager.h"
 
 class DebugScene : public Scene {
-    Gerenciador::SceneManager sceneManager; ///< Instância do gerenciador de cenas
-    Player* player;
-    std::vector<Entity*> lEntidades;
+    SceneManager sceneManager; ///< Instância do gerenciador de cenas
+    // Player* player;
+    // std::vector<Entity*> lEntidades;
 public:
     DebugScene();
     ~DebugScene();

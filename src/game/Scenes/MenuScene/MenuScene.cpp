@@ -1,9 +1,4 @@
 #include "MenuScene.h"
-#include "../GameScene/GameScene.h"
-#include "../CreditsScene/CreditsScene.h"
-#include "../../../engine/SceneManager/SceneManager.h"
-#include <iostream>
-
 MenuScene::MenuScene() : selectedButton(0) {}
 
 MenuScene::~MenuScene() {}

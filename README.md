@@ -37,7 +37,8 @@ O objetivo deste projeto é criar um jogo de plataforma com elementos clássicos
 3. Gere os arquivos de compilação na pastal ```build``` (necessário a cada novo arquivo do projeto).
     ```bash
     cd build
-    cmake ..
+    cmake -G "MinGW Makefiles" ..
+    cmake --build .
     ```
 4. _Cruze os dedos_ e compile o projeto.
     ```bash

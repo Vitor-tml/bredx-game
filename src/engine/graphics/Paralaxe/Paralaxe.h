@@ -1,7 +1,7 @@
 #ifndef _PARALLAX_H
 #define _PARALLAX_H
 
-#include "../Ente/Ente.h"
+#include "engine/world/Ente/Ente.h"
 #include <vector>
 struct Camada
 {

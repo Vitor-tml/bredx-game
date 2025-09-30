@@ -2,8 +2,8 @@
 #define _CENA_H
 
 #include <SFML/Graphics.hpp>
-#include "../ResourceManager/ResourceManager.h"
-#include "../Renderer/Renderer.h"
+#include "engine/core/ResourceManager/ResourceManager.h"
+#include "engine/graphics/Renderer/Renderer.h"
 
 class Scene
 {

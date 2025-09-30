@@ -3,7 +3,10 @@
 
 #include <string>
 #include <vector>
-#include "../../game/Entity/Entity.h"
+#include <SFML/Graphics/Texture.hpp>
+#include <SFML/Graphics/View.hpp>
+#include "game/entities/Entity/Entity.h"
+
 namespace TileEngine {
 
 class TileEntity : public Entity {
