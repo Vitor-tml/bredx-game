@@ -33,4 +33,3 @@ void Game::executar()
         gCenas->renderizarCenaAtual();
     }
 }
-

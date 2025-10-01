@@ -4,4 +4,5 @@ int main()
 {
     Game game;
     game.executar();
+    return EXIT_SUCCESS;
 }
