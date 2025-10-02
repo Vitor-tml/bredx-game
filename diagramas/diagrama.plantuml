@@ -1,4 +1,4 @@
-@startuml
+@startuml Diagrama
 !theme cyborg-outline
 skinparam classAttributeIconSize 0
 skinparam backgroundColor #1e1e1e
@@ -70,6 +70,33 @@ skinparam stereotype {
     CFontColor #000000
 }
 
+' ===================
+' GERENCIADOR DE NIVEL
+' ===================
+
+class Level {
+    - mapa : TileMap
+    - lEntidades : vector<Entity*>
+    - texturas : Sprites
+    - sons : Sounds 
+    - musica : Music
+    - cenario : 
+    + carragerTexturas()
+    + carregarSons()
+    + carregarMapa()
+    + inicializar()
+    + finalizar()
+    + carregarEntidades()
+}
+
+namespace Gerenciador {
+
+    class LevelManager <<Manager>> {
+        - {static} singleton: LevelManager*
+        - lNives : unordered_map
+        
+    }
+}
 ' ===================
 ' NAMESPACE GERENCIADOR
 ' ===================
