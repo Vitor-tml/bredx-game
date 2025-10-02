@@ -7,7 +7,11 @@ namespace Gerenciador{
 Gerenciador::Renderer* Renderer::singleton = nullptr;
 
 Renderer::Renderer(int largura, int altura, const std::string &titulo)
-    : janela(sf::VideoMode(largura, altura), titulo),
+    : 
+        // Pega a resolução atual da tela
+      desktop(sf::VideoMode::getDesktopMode()),
+      janela(desktop, titulo, sf::Style::Fullscreen),
+    //janela(sf::VideoMode(largura, altura), titulo),
       camera(sf::FloatRect(0, 0, largura, altura)), // Inicia câmera com tamanho da janela
       caixaDeMovimento(largura / 4, altura / 4, largura / 2, altura / 2) // Define os limites iniciais
 {

@@ -62,7 +62,7 @@ void MenuScene::renderizar() {
 }
 
 void MenuScene::processarEventos(const sf::Event &evento) {
-    std::cout << "Processando eventos" << std::endl;
+    // std::cout << "Processando eventos" << std::endl; // Debug
     if (evento.type == sf::Event::KeyPressed) {
         if (evento.key.code == sf::Keyboard::Up) {
             selecionarBotao((selectedButton - 1 + 2) % 2); // Corrigido: Mover para cima

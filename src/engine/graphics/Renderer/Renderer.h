@@ -29,6 +29,9 @@ private:
     static Renderer* singleton;
     static int camadaJanela;
     
+    // Pega a resolução atual da tela
+    sf::VideoMode desktop;
+
     sf::RenderWindow janela;
     sf::View camera;
     std::vector<std::pair<const sf::Drawable*, int>> drawables; ///< vetor de pares de int e drawable
