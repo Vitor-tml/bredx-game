@@ -9,7 +9,7 @@
 #include "engine/graphics/Paralaxe/Paralaxe.h"
 #include "game/Scenes/MenuScene/MenuScene.h"
 #include "game/entities/Entity/Entity.h"
-
+#include "engine/world/TileMap/Tilemap.h"
 class GameScene : public Scene {
 private:
     Gerenciador::CollisionManager gColisao; ///< Instância do gerenciador de colisões

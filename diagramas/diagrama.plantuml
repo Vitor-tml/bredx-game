@@ -87,6 +87,7 @@ class Level {
     + inicializar()
     + finalizar()
     + carregarEntidades()
+    + getEntidades()
 }
 
 namespace Gerenciador {
