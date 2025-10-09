@@ -62,3 +62,4 @@ const std::vector<Entity*>& Level::getEntidades()
 {
     return lEntidades;
 }
+

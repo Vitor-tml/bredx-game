@@ -2,7 +2,7 @@
 
 GameScene::GameScene()
 {
-
+    gNiveis = Gerenciador::LevelManager::getInstance();
 }
 
 GameScene::~GameScene()
@@ -12,33 +12,8 @@ GameScene::~GameScene()
 
 void GameScene::inicializar()
 {
-    // Carregando Textura
-    gRecursos->loadTexture("jogador", "../assets/textures/protagonista.png");
-    gRecursos->loadTexture("cenario1", "../assets/textures/cenario1.png");    
-    gRecursos->loadTexture("cenario2", "../assets/textures/cenario2.png");
-    gRecursos->loadTexture("cenario3", "../assets/textures/cenario3.png");
-    gRecursos->loadTexture("tilesheet", "../assets/newmap/sheets.png");
-    gRecursos->loadTexture("animacao", "../assets/textures/protagonistaSheet.png");
-    gRecursos->loadMusic("game", "../assets/musics/jogo.wav");
-
-    // Configurando mapa
-    map.loadMapFromFile("../assets/newmap/mapa.tmj");
-    map.loadSheet(gRecursos->getTexture("tilesheet"));
-    // Configurando cenário
-    cenario.addLayer(gRecursos->getTexture("cenario3"), 0.1,  0);
-    cenario.addLayer(gRecursos->getTexture("cenario2"), 0.2, 1);
-    cenario.addLayer(gRecursos->getTexture("cenario1"), 0,    2);
-
-    cenario.setPosition(map.getOrigem() + sf::Vector2f(0, 50));
-    // janela->setTamanhoCamera(640, 320);
-    
-    // Adicionando tiles como entidades
-    std::vector<Entity*> lTiles = map.getEntitys();
-    for(Entity* e :  lTiles) {
-        lEntidades.push_back(e);
-    }
-
-    
+    gNiveis->inicializar();
+ 
     sf::Image playerImage;
     playerImage.create(16, 16, sf::Color::Blue);
     sf::Texture playerTextura;
@@ -54,14 +29,8 @@ void GameScene::inicializar()
             gColisao.addEntity(entidade);
     }
 
-    // Iniciando a música
-    musica = gRecursos->getMusic("game");
-    musica->play();
-    musica->setLoop(true);
-    musica->setVolume(30); // Ajuste o volume conforme necessário
-
     janela->setMoveBounds(sf::FloatRect(200, 200, 100, 300)); // Exemplo de retângulo de 200x200
-    janela->setIsShader(true);
+
 }
 
 void GameScene::executar()

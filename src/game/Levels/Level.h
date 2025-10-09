@@ -22,4 +22,8 @@ public:
     void carregarEntidades();
     void carregarCenario();
     const std::vector<Entity*>& getEntidades();
+
+    // Gambiarras
+
+    Parallax &getCenario() { return cenario;};
 };
