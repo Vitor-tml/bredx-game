@@ -13,11 +13,13 @@ GameScene::~GameScene()
 void GameScene::inicializar()
 {
     gNiveis->inicializar();
- 
+    
+    
     sf::Image playerImage;
     playerImage.create(16, 16, sf::Color::Blue);
     sf::Texture playerTextura;
     playerTextura.loadFromImage(playerImage);
+
     
     // Arrumar essas gambiarras depois =============================================================
     player = new Player(gRecursos->getTexture("jogador"), 0, 0, 10, 2, 10);
@@ -26,11 +28,12 @@ void GameScene::inicializar()
     
     for(Entity* entidade : lEntidades){
         if(entidade->getColisao())
-            gColisao.addEntity(entidade);
+        gColisao.addEntity(entidade);
     }
-
+    
     janela->setMoveBounds(sf::FloatRect(200, 200, 100, 300)); // Exemplo de retângulo de 200x200
 
+    
 }
 
 void GameScene::executar()

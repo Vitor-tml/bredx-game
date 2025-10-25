@@ -1,6 +1,7 @@
 #include "LevelManager.h"
 
 // Início namespace Gerenciador
+
 namespace Gerenciador {
 LevelManager* LevelManager::singleton = nullptr;
 
