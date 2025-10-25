@@ -27,8 +27,10 @@ void Game::executar()
             // Se janela fechada encerra, senão trata evento
             if(evento.type == sf::Event::Closed)
                 janela->close();
-            else
-                gCenas->processarEventosCenaAtual(evento);
+            if (evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Escape) // Atualizar para sair quando apertas ESC no menu
+                SceneManager::getInstance()->mudarCena(std::make_unique<MenuScene>());
+
+            gCenas->processarEventosCenaAtual(evento);
         }
         // Aqui a lógica do jogo roda
         gCenas->atualizarCenaAtual();
